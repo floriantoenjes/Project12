@@ -112,5 +112,7 @@ public class Recipe extends BaseEntity {
     public void setFavorite(boolean favorite) {
         isFavorite = favorite;
     }
+
+
 }
 

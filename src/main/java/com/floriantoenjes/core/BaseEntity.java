@@ -17,4 +17,8 @@ public class BaseEntity {
     public BaseEntity() {
         id = null;
     }
+
+    public Long getId() {
+        return id;
+    }
 }

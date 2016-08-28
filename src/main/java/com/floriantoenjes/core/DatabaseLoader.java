@@ -32,6 +32,18 @@ public class DatabaseLoader implements ApplicationRunner {
         recipe.addIngredient(new Ingredient("Egg", "good", 10));
         recipe.addStep(new Step("Cook and prepare a tasty egg"));
 
+        Recipe recipe2 = new Recipe(
+                "url",
+                "Tofu flesh",
+                "It is tasty",
+                Category.Dinner,
+                2,
+                5
+        );
+        recipe2.addIngredient(new Ingredient("Tofu", "packaged", 2));
+        recipe.addStep(new Step("Eat it"));
+
         recipes.save(recipe);
+        recipes.save(recipe2);
     }
 }

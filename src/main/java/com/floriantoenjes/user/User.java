@@ -1,4 +1,6 @@
 package com.floriantoenjes.user;
 
-public class User {
+import com.floriantoenjes.core.BaseEntity;
+
+public class User extends BaseEntity {
 }

@@ -12,6 +12,9 @@ public class Step extends BaseEntity {
     @ManyToOne
     private Recipe recipe;
 
+    public Step() {
+    }
+
     public Step(String description) {
         this.description = description;
     }
@@ -22,5 +25,13 @@ public class Step extends BaseEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 }

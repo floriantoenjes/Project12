@@ -16,11 +16,10 @@ public class Ingredient extends BaseEntity {
 
     public Ingredient(){}
 
-    public Ingredient(String item, String condition, Integer quantity, Recipe recipe) {
+    public Ingredient(String item, String condition, Integer quantity) {
         this.item = item;
         this.condition = condition;
         this.quantity = quantity;
-        this.recipe = recipe;
     }
 
     public String getItem() {

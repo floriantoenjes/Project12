@@ -7,6 +7,7 @@ import com.floriantoenjes.step.Step;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,15 +24,19 @@ public class Recipe extends BaseEntity {
     private List<Step> steps;
     private boolean isFavorite;
 
-    public Recipe(String name, String description, Category category, Integer prepTime, Integer cookTime,
-                  List<Ingredient> ingredients, List<Step> steps) {
+    public Recipe() {
+    }
+
+    public Recipe(String photo, String name, String description, Category category, Integer prepTime,
+                  Integer cookTime) {
+        this.photo = photo;
         this.name = name;
         Description = description;
         this.category = category;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
-        this.ingredients = ingredients;
-        this.steps = steps;
+        this.ingredients = new ArrayList<>();
+        this.steps = new ArrayList<>();
     }
 
     public String getPhoto() {
@@ -86,16 +91,18 @@ public class Recipe extends BaseEntity {
         return ingredients;
     }
 
-    public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
+    public void addIngredient(Ingredient ingredient) {
+        ingredient.setRecipe(this);
+        ingredients.add(ingredient);
     }
 
     public List<Step> getSteps() {
         return steps;
     }
 
-    public void setSteps(List<Step> steps) {
-        this.steps = steps;
+    public void addStep(Step step) {
+        step.setRecipe(this);
+        steps.add(step);
     }
 
     public boolean isFavorite() {
@@ -107,6 +114,3 @@ public class Recipe extends BaseEntity {
     }
 }
 
-enum Category {
-    Breakfast, Lunch, Dinner, Dessert
-}

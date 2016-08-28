@@ -150,56 +150,18 @@
                   </p>
                 </div>
 
-                <div class="ingredient-row">
+                <div th:each="ingredient : ${recipe.ingredients}" class="ingredient-row">
                   <div class="prefix-20 grid-30">
-                    <p>
-                      Eggs
+                    <p th:text="${ingredient.name}">
                     </p>
                   </div>
                   <div class="grid-30">
-                    <p>
+                    <p th:text="${ingredient.condition}">
                       Fresh
                     </p>
                   </div>
                   <div class="grid-10 suffix-10">
-                    <p>
-                      2
-                    </p>
-                  </div>
-                </div>
-
-                <div class="ingredient-row">
-                  <div class="prefix-20 grid-30">
-                    <p>
-                      Nutella
-                    </p>
-                  </div>
-                  <div class="grid-30">
-                    <p>
-                      Jar
-                    </p>
-                  </div>
-                  <div class="grid-10 suffix-10">
-                    <p>
-                      1
-                    </p>
-                  </div>
-                </div>
-
-                <div class="ingredient-row">
-                  <div class="prefix-20 grid-30">
-                    <p>
-                      Bread
-                    </p>
-                  </div>
-                  <div class="grid-30">
-                    <p>
-                      Fresh
-                    </p>
-                  </div>
-                  <div class="grid-10 suffix-10">
-                    <p>
-                      2
+                    <p th:text="${ingredient.quantity}">
                     </p>
                   </div>
                 </div>
@@ -218,26 +180,9 @@
                     </p>
                   </div>
 
-                  <div class="step-row">
+                  <div th:each="step : ${recipe.steps}" class="step-row">
                     <div class="prefix-20 grid-80">
-                      <p>
-                        1. Crack your eggs and beat them.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="step-row">
-                    <div class="prefix-20 grid-80">
-                      <p>
-                        2. Toast the bread.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="step-row">
-                    <div class="prefix-20 grid-80">
-                      <p>
-                        3. Cover bread with eggs. Fry for 15 minutes.
+                      <p th:text="${step.description}">
                       </p>
                     </div>
                   </div>

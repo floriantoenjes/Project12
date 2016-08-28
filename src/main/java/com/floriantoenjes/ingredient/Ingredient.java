@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Ingredient extends BaseEntity {
-    private String item;
+    private String name;
     private String condition;
     private Integer quantity;
     @ManyToOne
@@ -16,18 +16,18 @@ public class Ingredient extends BaseEntity {
 
     public Ingredient(){}
 
-    public Ingredient(String item, String condition, Integer quantity) {
-        this.item = item;
+    public Ingredient(String name, String condition, Integer quantity) {
+        this.name = name;
         this.condition = condition;
         this.quantity = quantity;
     }
 
-    public String getItem() {
-        return item;
+    public String getName() {
+        return name;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCondition() {

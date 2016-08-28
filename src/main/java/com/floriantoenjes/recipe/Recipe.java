@@ -2,24 +2,29 @@ package com.floriantoenjes.recipe;
 
 import com.floriantoenjes.core.BaseEntity;
 import com.floriantoenjes.ingredient.Ingredient;
+import com.floriantoenjes.step.Step;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import java.awt.Image;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
 public class Recipe extends BaseEntity {
-    private Image photo;
+    private String photo;
     private String name;
     private String Description;
     private Category category;
     private Integer prepTime;
     private Integer cookTime;
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     private List<Ingredient> ingredients;
-    private List<String> steps;
+    @OneToMany(mappedBy = "recipe",  cascade = CascadeType.ALL)
+    private List<Step> steps;
+    private boolean isFavorite;
 
     public Recipe(String name, String description, Category category, Integer prepTime, Integer cookTime,
-                  List<Ingredient> ingredients, List<String> steps) {
+                  List<Ingredient> ingredients, List<Step> steps) {
         this.name = name;
         Description = description;
         this.category = category;
@@ -29,11 +34,11 @@ public class Recipe extends BaseEntity {
         this.steps = steps;
     }
 
-    public Image getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Image photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
@@ -85,12 +90,20 @@ public class Recipe extends BaseEntity {
         this.ingredients = ingredients;
     }
 
-    public List<String> getSteps() {
+    public List<Step> getSteps() {
         return steps;
     }
 
-    public void setSteps(List<String> steps) {
+    public void setSteps(List<Step> steps) {
         this.steps = steps;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 }
 

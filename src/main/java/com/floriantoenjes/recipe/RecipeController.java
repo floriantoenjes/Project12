@@ -1,12 +1,16 @@
 package com.floriantoenjes.recipe;
 
+import com.floriantoenjes.ingredient.IngredientService;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -15,6 +19,9 @@ public class RecipeController {
     @Autowired
     RecipeService recipeService;
 
+    @Autowired
+    IngredientService ingredientService;
+
     @RequestMapping("/index")
     public String listRecipes(Model model) {
         List<Recipe> recipes = recipeService.findAll();
@@ -22,19 +29,25 @@ public class RecipeController {
         return "index";
     }
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String addRecipe() {
-
+    public String addRecipe(@Valid Recipe recipe, BindingResult result) {
+        recipeService.save(recipe);
+        return "redirect:/index";
     }
 
     @RequestMapping("/recipe/{id}")
-    public String add(@PathVariable Long id, Model model) {
+    public String detail(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
+        Hibernate.initialize(recipe.getIngredients());
+        Hibernate.initialize(recipe.getSteps());
         model.addAttribute("recipe", recipe);
         return "detail";
     }
     @RequestMapping("/add")
-    public String recipeForm() {
-        return null;
+    public String recipeForm(Model model) {
+        model.addAttribute("recipe", new Recipe());
+        model.addAttribute("ingredients", ingredientService.findAll());
+        model.addAttribute("categories", Category.values());
+        return "edit";
     }
 
 }

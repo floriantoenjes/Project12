@@ -10,7 +10,10 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Component
 public class DatabaseLoader implements ApplicationRunner {
@@ -23,27 +26,12 @@ public class DatabaseLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Recipe recipe = new Recipe(
-                "http://abc.com",
-                "Ham and Eggs",
-                "Tasty",
-                Category.Breakfast, 20, 10
-                );
-        recipe.addIngredient(new Ingredient("Egg", "good", 10));
-        recipe.addStep(new Step("Cook and prepare a tasty egg"));
-
-        Recipe recipe2 = new Recipe(
-                "url",
-                "Tofu flesh",
-                "It is tasty",
-                Category.Dinner,
-                2,
-                5
-        );
-        recipe2.addIngredient(new Ingredient("Tofu", "packaged", 2));
-        recipe.addStep(new Step("Eat it"));
-
+        Ingredient egg = new Ingredient("Egg", "superb", 6);
+        Step step = new Step("Cook and prepare a tasty egg");
+        Recipe recipe = new Recipe("http://abc.com", "Ham and Eggs", "Tasty",
+                Category.Breakfast, 20, 10);;
+        recipe.addIngredient(egg);
+        recipe.addStep(step);
         recipes.save(recipe);
-        recipes.save(recipe2);
     }
 }

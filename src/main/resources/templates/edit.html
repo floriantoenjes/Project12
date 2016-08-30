@@ -40,7 +40,7 @@
     <div class="grid-100">
 
       <div class="recipes">
-        <form action="/index" method="post">
+        <form action="/index" method="post" th:object="${recipe}">
         <div class="grid-100 row controls">
           <div class="grid-50">
             <h2> Recipe Editor </h2>
@@ -62,7 +62,7 @@
           </div>
           <div class="grid-40">
             <p>
-              <input placeholder="Url"> </input>
+              <input th:field="*{photo}" placeholder="Url"> </input>
             </p>
           </div>
         </div> <div class="clear"></div>
@@ -75,7 +75,7 @@
           </div>
           <div class="grid-40">
             <p>
-              <input> </input>
+              <input th:field="*{name}"> </input>
             </p>
           </div>
         </div> <div class="clear"></div>
@@ -88,7 +88,7 @@
           </div>
           <div class="grid-40">
             <p>
-              <textarea> </textarea>
+              <textarea th:field="*{description}"> </textarea>
             </p>
           </div>
         </div> <div class="clear"></div>
@@ -101,12 +101,8 @@
           </div>
           <div class="grid-30">
             <p>
-              <select>
-                <option value="">All Categories</option>
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="dessert">Dessert</option>
+              <select th:field="*{category}">
+                <option th:each="category : ${categories}" th:value="${category}" th:text="${category}">All Categories</option>
               </select>
             </p>
           </div>
@@ -120,7 +116,7 @@
           </div>
           <div class="grid-20">
             <p>
-              <input> </input>
+              <input th:field="*{prepTime}"> </input>
             </p>
           </div>
         </div> <div class="clear"></div>
@@ -133,7 +129,7 @@
           </div>
           <div class="grid-20">
             <p>
-              <input> </input>
+              <input th:field="*{cookTime}"> </input>
             </p>
           </div>
         </div> <div class="clear"></div>
@@ -160,57 +156,17 @@
                   </p>
                 </div>
 
-                <div class="ingredient-row">
+                <div class="ingredient-row" th:each="ingredient : ${ingredients}">
                   <div class="prefix-20 grid-30">
                     <p>
-                      <select>
-                        <option value="">Select Item</option>
+                      <select th:field="*{ingredients}">
+                        <option th:each="ingredient : ${ingredients}" th:value="${ingredient.name}" th:text="${ingredient.name}">Select Item</option>
                       </select>
                     </p>
                   </div>
                   <div class="grid-30">
                     <p>
-                      <input> </input>
-                    </p>
-                  </div>
-                  <div class="grid-10 suffix-10">
-                    <p>
-                      <input> </input>
-                    </p>
-                  </div>
-                </div>
-
-                <div class="ingredient-row">
-                  <div class="prefix-20 grid-30">
-                    <p>
-                      <select>
-                        <option value="">Select Item</option>
-                      </select>
-                    </p>
-                  </div>
-                  <div class="grid-30">
-                    <p>
-                      <input> </input>
-                    </p>
-                  </div>
-                  <div class="grid-10 suffix-10">
-                    <p>
-                      <input> </input>
-                    </p>
-                  </div>
-                </div>
-
-                <div class="ingredient-row">
-                  <div class="prefix-20 grid-30">
-                    <p>
-                      <select>
-                        <option value="">Select Item</option>
-                      </select>
-                    </p>
-                  </div>
-                  <div class="grid-30">
-                    <p>
-                      <input> </input>
+                      <input th:field="${"> </input>
                     </p>
                   </div>
                   <div class="grid-10 suffix-10">
@@ -243,23 +199,7 @@
                   <div class="step-row">
                     <div class="prefix-20 grid-80">
                       <p>
-                        <input></input>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="step-row">
-                    <div class="prefix-20 grid-80">
-                      <p>
-                        <input></input>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="step-row">
-                    <div class="prefix-20 grid-80">
-                      <p>
-                        <input></input>
+                        <input th:field="*{steps}"></input>
                       </p>
                     </div>
                   </div>

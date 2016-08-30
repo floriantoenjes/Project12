@@ -4,6 +4,7 @@ import com.floriantoenjes.core.BaseEntity;
 import com.floriantoenjes.recipe.Recipe;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -12,6 +13,7 @@ public class Ingredient extends BaseEntity {
     private String condition;
     private Integer quantity;
     @ManyToOne
+    @JoinColumn(name = "recipe_id")
     private Recipe recipe;
 
     public Ingredient(){}

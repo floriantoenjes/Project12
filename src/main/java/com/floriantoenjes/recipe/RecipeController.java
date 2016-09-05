@@ -38,6 +38,7 @@ public class RecipeController {
                             @RequestParam(name = "condition") String condition,
                             @RequestParam(name="quantity") String quantity
             ,BindingResult result) {
+
         String[] items = item.split(",");
         String[] conditions = condition.split(",");
         String[] quantities = quantity.split(",");
@@ -52,8 +53,17 @@ public class RecipeController {
             );
         }
         recipe.setIngredients(ingredients);
+
         recipeService.save(recipe);
         return "redirect:/index";
+    }
+
+    @RequestMapping("/add")
+    public String recipeForm(Model model) {
+        model.addAttribute("recipe", new Recipe());
+        model.addAttribute("ingredients", ingredientService.findAll());
+        model.addAttribute("categories", Category.values());
+        return "edit";
     }
 
     @RequestMapping("/recipe/{id}")
@@ -64,12 +74,16 @@ public class RecipeController {
         model.addAttribute("recipe", recipe);
         return "detail";
     }
-    @RequestMapping("/add")
-    public String recipeForm(Model model) {
-        model.addAttribute("recipe", new Recipe());
-        model.addAttribute("ingredients", ingredientService.findAll());
-        model.addAttribute("categories", Category.values());
-        return "edit";
+
+    @RequestMapping("/recipe/{id}/favorite")
+    public String setFavorite(@PathVariable Long id, Model model) {
+        Recipe recipe = recipeService.findById(id);
+        recipe.setFavorite(!recipe.isFavorite());
+        return String.format("redirect:/recipe/%s", id);
     }
+
+
+
+
 
 }

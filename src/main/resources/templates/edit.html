@@ -156,32 +156,10 @@
                   </p>
                 </div>
 
-                <div class="ingredient-row">
-                  <div class="prefix-20 grid-30">
-                    <p>
-                      <select name="item">
-                        <option th:each="ingredient : ${ingredients}" th:value="${ingredient.name}" th:text="${ingredient.name}">Select Item</option>
-                      </select>
-                    </p>
-                  </div>
-                  <div class="grid-30">
-                    <p>
-                      <input value="" name="condition"> </input>
-                    </p>
-                  </div>
-                  <div class="grid-10 suffix-10">
-                    <p>
-                      <input value="" name="quantity"> </input>
-                    </p>
-                  </div>
-                </div>
-
             <div class="ingredient-row">
                 <div class="prefix-20 grid-30">
                     <p>
-                        <select name="item">
-                            <option th:each="ingredient : ${ingredients}" th:value="${ingredient.name}" th:text="${ingredient.name}">Select Item</option>
-                        </select>
+                        <input value="" name="item"/>
                     </p>
                 </div>
                 <div class="grid-30">
@@ -223,14 +201,6 @@
                       </p>
                     </div>
                   </div>
-
-                <div class="step-row">
-                  <div class="prefix-20 grid-80">
-                    <p>
-                      <input th:field="*{steps}"></input>
-                    </p>
-                  </div>
-                </div>
 
                   <div class="prefix-20 grid-80 add-row">
                     <p>

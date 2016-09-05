@@ -79,6 +79,7 @@ public class RecipeController {
     public String setFavorite(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
         recipe.setFavorite(!recipe.isFavorite());
+        recipeService.save(recipe);
         return String.format("redirect:/recipe/%s", id);
     }
 

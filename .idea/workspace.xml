@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/detail.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
     </list>
     <ignored path="Recipe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RecipeController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RecipeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state relative-caret-position="203">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -61,21 +62,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/detail.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+            <state relative-caret-position="221">
+              <caret line="67" column="109" selection-start-line="67" selection-start-column="109" selection-end-line="67" selection-end-column="109" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="64" column="44" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="44" />
+            <state relative-caret-position="193">
+              <caret line="50" column="103" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Recipe.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-748">
+              <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -482,17 +493,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/core/BaseEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Category.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/core/DatabaseLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/ingredient/Ingredient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/converter/StringStepConverter.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/edit.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/detail.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/detail.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
       </list>
     </option>
   </component>
@@ -657,7 +668,7 @@
     <property name="prop_add_unversioned_files" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="index&#9;FILE&#9;file://C:/Users/Home/IdeaProjects/Project12/src/main/resources/templates/index.html&#10;detail&#9;FILE&#9;file://C:/Users/Home/IdeaProjects/Project12/src/main/resources/templates/detail.html&#10;re&#9;FILE&#9;file://C:/Users/Home/IdeaProjects/Project12/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
+    <property name="SearchEverywhereHistoryKey" value="de&#9;FILE&#9;file://C:/Users/Home/IdeaProjects/Project12/src/main/resources/templates/detail.html&#10;recipe&#9;FILE&#9;file://C:/Users/Home/IdeaProjects/Project12/src/main/java/com/floriantoenjes/recipe/Recipe.java&#10;index&#9;FILE&#9;file://C:/Users/Home/IdeaProjects/Project12/src/main/resources/templates/index.html&#10;detail&#9;FILE&#9;file://C:/Users/Home/IdeaProjects/Project12/src/main/resources/templates/detail.html&#10;re&#9;FILE&#9;file://C:/Users/Home/IdeaProjects/Project12/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -1010,7 +1021,14 @@
       <option name="project" value="LOCAL" />
       <updated>1473096408764</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implementing setting favorite for recipes 2">
+      <created>1473097096228</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1473097096228</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1090,7 +1108,8 @@
     <MESSAGE value="Major changes" />
     <MESSAGE value="Minor changes." />
     <MESSAGE value="Implementing setting favorite for recipes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing setting favorite for recipes" />
+    <MESSAGE value="Implementing setting favorite for recipes 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing setting favorite for recipes 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1401,14 +1420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/converter/StringStepConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1449,10 +1460,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.2.5.RELEASE/6d6268e82b35921d9daf4cfda9a2f1bd99afd87a/spring-web-4.2.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="50" column="103" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="64" column="44" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="44" />
+          <caret line="67" column="109" selection-start-line="67" selection-start-column="109" selection-end-line="67" selection-end-column="109" />
           <folding />
         </state>
       </provider>
@@ -1465,26 +1492,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.2.5.RELEASE/6d6268e82b35921d9daf4cfda9a2f1bd99afd87a/spring-web-4.2.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+        <state relative-caret-position="-748">
+          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+        <state relative-caret-position="203">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
         </state>
       </provider>

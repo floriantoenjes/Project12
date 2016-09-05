@@ -33,7 +33,8 @@ public class Recipe extends BaseEntity {
     private List<Ingredient> ingredients;
     @OneToMany(mappedBy = "recipe",  cascade = CascadeType.ALL)
     private List<Step> steps;
-    private boolean isFavorite;
+    // Todo: Should this be private?
+    public boolean isFavorite;
 
     public Recipe() {
     }

@@ -1,6 +1,8 @@
 package com.floriantoenjes.recipe;
 
+import com.floriantoenjes.ingredient.Ingredient;
 import com.floriantoenjes.ingredient.IngredientService;
+import com.floriantoenjes.step.Step;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +11,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -29,7 +34,24 @@ public class RecipeController {
         return "index";
     }
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String addRecipe(@Valid Recipe recipe, BindingResult result) {
+    public String addRecipe(@Valid Recipe recipe, @RequestParam(name = "item") String item,
+                            @RequestParam(name = "condition") String condition,
+                            @RequestParam(name="quantity") String quantity
+            ,BindingResult result) {
+        String[] items = item.split(",");
+        String[] conditions = condition.split(",");
+        String[] quantities = quantity.split(",");
+
+        List<Ingredient> ingredients = new ArrayList<>();
+        for (int i = 0; i < items.length; i++) {
+            ingredients.add(
+                    new Ingredient(
+                            items[i],
+                            conditions[i],
+                            Integer.parseInt(quantities[i]))
+            );
+        }
+        recipe.setIngredients(ingredients);
         recipeService.save(recipe);
         return "redirect:/index";
     }

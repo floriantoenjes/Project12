@@ -25,13 +25,13 @@ public class Recipe extends BaseEntity {
     private String description;
 //    @NotNull
     private Category category;
-    @Range(min = 1, max = 2000)
+    @Range(min = 0, max = 2000)
     private Integer prepTime;
-    @Range(min = 1, max = 2000)
+    @Range(min = 0, max = 2000)
     private Integer cookTime;
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     private List<Ingredient> ingredients;
-    @OneToMany(mappedBy = "recipe",  cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "recipe",  cascade = CascadeType.ALL)
     private List<Step> steps;
     private boolean isFavorite;
 
@@ -125,10 +125,16 @@ public class Recipe extends BaseEntity {
 
     public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
+        for (Ingredient ingredient : ingredients) {
+            ingredient.setRecipe(this);
+        }
     }
 
     public void setSteps(List<Step> steps) {
         this.steps = steps;
+        for (Step step : steps) {
+            step.setRecipe(this);
+        }
     }
 }
 

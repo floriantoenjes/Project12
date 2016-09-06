@@ -30,32 +30,34 @@
     <div class="grid-100">
       <a href="index.html">
         <h1>
-          <img src="images/chefbot.svg" height="60px">
-          <br>
+          <img src="images/chefbot.svg" height="60px"/>
+          <br/>
           My Recipes
         </h1>
       </a>
     </div>
 
+    <form th:action="@{/login}" method="post" th:object="${user}">
     <div class="grid-100">
       <div class="recipes">
         <div class="prefix-20 grid-60 suffix-20">
           <p>
-            <input placeholder="Username"> </input>
+            <input th:field="*{username}" placeholder="Username"> </input>
           </p>
         </div> <div class="clear"></div>
         <div class="prefix-20 grid-60 suffix-20">
           <p>
-            <input placeholder="Password" type="password"> </input>
+            <input th:field="*{password}" placeholder="Password" type="password"> </input>
           </p>
         </div> <div class="clear"></div>
         <div class="prefix-20 grid-60 suffix-20">
           <p>
-            <button>Login</button>
+            <button type="submit">Login</button>
           </p>
         </div> <div class="clear"></div>
       </div> <!-- recipes -->
     </div> <!-- grid-100 -->
+    </form>
   </div> <!-- grid-container -->
 </body>
 </html>

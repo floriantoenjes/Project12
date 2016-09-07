@@ -42,10 +42,7 @@ public class DatabaseLoader implements ApplicationRunner {
         recipe.addStep(step);
         recipes.save(recipe);
 
-        Role role = new Role("ROLE_USER");
-        roles.save(role);
-
-        User user = new User("fto", "password", role);
+        User user = new User("fto", "password", new Role("ROLE_USER"));
         users.save(user);
     }
 }

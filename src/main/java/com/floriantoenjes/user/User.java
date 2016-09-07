@@ -26,6 +26,7 @@ public class User extends BaseEntity implements UserDetails {
 
     public User(String username, String password, Role role) {
         this.username = username;
+        role.setUser(this);
         this.password = password;
         this.role = role;
     }
@@ -73,5 +74,14 @@ public class User extends BaseEntity implements UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        role.setUser(this);
+        this.role = role;
     }
 }

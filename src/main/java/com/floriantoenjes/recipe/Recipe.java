@@ -3,13 +3,11 @@ package com.floriantoenjes.recipe;
 import com.floriantoenjes.core.BaseEntity;
 import com.floriantoenjes.ingredient.Ingredient;
 import com.floriantoenjes.step.Step;
+import com.floriantoenjes.user.User;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.validator.constraints.Range;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -35,6 +33,8 @@ public class Recipe extends BaseEntity {
     private List<Step> steps;
     // Todo: Should this be private?
     public boolean isFavorite;
+    @ManyToOne
+    private User owner;
 
     public Recipe() {
     }

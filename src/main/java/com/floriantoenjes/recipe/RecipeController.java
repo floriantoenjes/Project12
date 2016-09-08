@@ -83,6 +83,12 @@ public class RecipeController {
         return String.format("redirect:/recipe/%s", id);
     }
 
+    @RequestMapping("/recipe/{id}/edit")
+    public String editForm() {
+
+        return "edit";
+    }
+
 
 
 

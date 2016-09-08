@@ -1,6 +1,7 @@
 package com.floriantoenjes.user;
 
 import com.floriantoenjes.core.BaseEntity;
+import com.floriantoenjes.recipe.Recipe;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,6 +23,9 @@ public class User extends BaseEntity implements UserDetails {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Role role;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Recipe> recipes;
 
     public User(){}
 
@@ -83,5 +88,18 @@ public class User extends BaseEntity implements UserDetails {
     public void setRole(Role role) {
         role.setUser(this);
         this.role = role;
+    }
+
+    public List<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public void addRecipe(Recipe recipe) {
+        recipe.setOwner(this);
+        recipes.add(recipe);
+    }
+
+    public void setRecipes(List<Recipe> recipes) {
+        this.recipes = recipes;
     }
 }

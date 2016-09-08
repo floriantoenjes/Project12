@@ -137,5 +137,14 @@ public class Recipe extends BaseEntity {
             step.setRecipe(this);
         }
     }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        owner.addRecipe(this);
+        this.owner = owner;
+    }
 }
 

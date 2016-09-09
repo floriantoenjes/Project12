@@ -40,10 +40,11 @@ public class RecipeController {
         return "index";
     }
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String addRecipe(@Valid Recipe recipe, @RequestParam(name = "item") String item,
+    public String addRecipe(@Valid Recipe recipe, BindingResult result,
+                            @RequestParam(name = "item") String item,
                             @RequestParam(name = "condition") String condition,
-                            @RequestParam(name="quantity") String quantity
-            ,BindingResult result) {
+                            @RequestParam(name = "quantity") String quantity
+            ) {
 
         String[] items = item.split(",");
         String[] conditions = condition.split(",");
@@ -90,8 +91,10 @@ public class RecipeController {
     }
 
     @RequestMapping("/recipe/{id}/edit")
-    public String editForm() {
-
+    public String editForm(@PathVariable Long id, Model model) {
+        Recipe recipe = recipeService.findById(id);
+        model.addAttribute("recipe", recipe);
+        model.addAttribute("categories", Category.values());
         return "edit";
     }
 

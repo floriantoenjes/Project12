@@ -8,8 +8,8 @@
   <title>Recipe Editor | My Recipes</title>
 
   <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'/>
-  <link rel="stylesheet" href="css/unsemantic-grid-responsive.css"/>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" th:href="@{/css/unsemantic-grid-responsive.css}"/>
+  <link rel="stylesheet" th:href="@{/css/styles.css}"/>
 
 </head>
 
@@ -17,7 +17,7 @@
 
   <nav>
     <a href="profile.html">
-      Chandra S.
+      <span sec:authentication="name"></span>
     </a>
     &bull;
     <a href="login.html">
@@ -30,7 +30,7 @@
     <div class="grid-100">
       <a href="index.html">
         <h1>
-          <img src="images/chefbot.svg" height="60px"/>
+          <img th:src="@{/images/chefbot.svg}" height="60px"/>
           <br/>
           My Recipes
         </h1>
@@ -41,6 +41,7 @@
 
       <div class="recipes">
         <form action="/index" method="post" th:object="${recipe}">
+            <input type="hidden" th:field="*{id}"/>
         <div class="grid-100 row controls">
           <div class="grid-50">
             <h2> Recipe Editor </h2>

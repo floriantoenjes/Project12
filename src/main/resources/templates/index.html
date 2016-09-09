@@ -17,7 +17,7 @@
 
   <nav>
     <a href="profile.html">
-      Chandra S.
+      <span sec:authentication="name"></span>
     </a>
     &bull;
     <a th:href="@{/logout}">
@@ -74,7 +74,7 @@
             <div class="grid-30">
               <div class="flush-right">
                 <p>
-                  <a href="edit.html"> <img src="images/edit.svg" height="12px"/> Edit </a>
+                  <a th:href="|/recipe/${recipe.id}/edit|"> <img src="images/edit.svg" height="12px"/> Edit </a>
                   <a th:href="|/recipe/${recipe.id}/delete|"> <img src="images/delete.svg" height="12px"/> Delete </a>
                 </p>
               </div>

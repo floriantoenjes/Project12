@@ -42,6 +42,7 @@
       <div class="recipes">
         <form action="/index" method="post" th:object="${recipe}">
             <input type="hidden" th:field="*{id}"/>
+            <input type="hidden" th:field="*{version}"/>
         <div class="grid-100 row controls">
           <div class="grid-50">
             <h2> Recipe Editor </h2>

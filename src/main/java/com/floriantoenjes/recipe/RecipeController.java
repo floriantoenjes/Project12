@@ -93,6 +93,7 @@ public class RecipeController {
     public String editForm(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
         model.addAttribute("recipe", recipe);
+        model.addAttribute("ingredients", ingredientService.findAll());
         model.addAttribute("categories", Category.values());
         return "edit";
     }

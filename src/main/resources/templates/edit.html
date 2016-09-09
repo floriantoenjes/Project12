@@ -161,7 +161,9 @@
             <div class="ingredient-row">
                 <div class="prefix-20 grid-30">
                     <p>
-                        <input value="" name="item"/>
+                      <select th:field="*{ingredients}">
+                        <option th:each="ingred : ${ingredients}" th:value="${ingred.id}" th:text="${ingred.name}" name="item"></option>
+                      </select>
                     </p>
                 </div>
                 <div class="grid-30">

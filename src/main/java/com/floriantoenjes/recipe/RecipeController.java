@@ -43,7 +43,8 @@ public class RecipeController {
     public String addRecipe(@Valid Recipe recipe, BindingResult result,
                             @RequestParam(name = "item") String item,
                             @RequestParam(name = "condition") String condition,
-                            @RequestParam(name = "quantity") String quantity
+                            @RequestParam(name = "quantity") String quantity,
+                            HttpServletRequest request
             ) {
 
         String[] items = item.split(",");
@@ -60,7 +61,6 @@ public class RecipeController {
             );
         }
         recipe.setIngredients(ingredients);
-
         recipeService.save(recipe);
         return "redirect:/index";
     }
@@ -91,7 +91,7 @@ public class RecipeController {
     }
 
     @RequestMapping("/recipe/{id}/edit")
-    public String editForm(@PathVariable Long id, Model model) {
+    public String editForm(@PathVariable Long id, HttpServletRequest request, Model model) {
         Recipe recipe = recipeService.findById(id);
         model.addAttribute("recipe", recipe);
         model.addAttribute("categories", Category.values());

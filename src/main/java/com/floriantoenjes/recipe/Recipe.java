@@ -14,14 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Recipe   {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Version
-    private Long version;
+public class Recipe extends BaseEntity {
 
     @Size(min = 3, max = 250)
     private String photo;
@@ -45,7 +38,6 @@ public class Recipe   {
     private User owner;
 
     public Recipe() {
-        this.id = null;
     }
 
     public Recipe(String photo, String name, String description, Category category, Integer prepTime, Integer cookTime) {
@@ -157,28 +149,6 @@ public class Recipe   {
         this.owner = owner;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Recipe recipe = (Recipe) o;
-
-        return id != null ? id.equals(recipe.id) : recipe.id == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
 }
 

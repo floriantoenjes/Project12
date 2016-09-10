@@ -40,26 +40,7 @@ public class RecipeController {
         return "index";
     }
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String addRecipe(@Valid Recipe recipe, BindingResult result,
-                            @RequestParam(name = "item") String item,
-                            @RequestParam(name = "condition") String condition,
-                            @RequestParam(name = "quantity") String quantity
-            ) {
-
-        String[] items = item.split(",");
-        String[] conditions = condition.split(",");
-        String[] quantities = quantity.split(",");
-
-        List<Ingredient> ingredients = new ArrayList<>();
-        for (int i = 0; i < items.length; i++) {
-            ingredients.add(
-                    new Ingredient(
-                            items[i],
-                            conditions[i],
-                            Integer.parseInt(quantities[i]))
-            );
-        }
-        recipe.setIngredients(ingredients);
+    public String addRecipe(@Valid Recipe recipe, BindingResult result) {
         recipeService.save(recipe);
         return "redirect:/index";
     }

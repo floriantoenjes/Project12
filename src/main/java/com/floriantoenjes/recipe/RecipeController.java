@@ -2,6 +2,7 @@ package com.floriantoenjes.recipe;
 
 import com.floriantoenjes.ingredient.Ingredient;
 import com.floriantoenjes.ingredient.IngredientService;
+import com.floriantoenjes.item.ItemService;
 import com.floriantoenjes.step.Step;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,9 @@ public class RecipeController {
     @Autowired
     IngredientService ingredientService;
 
+    @Autowired
+    ItemService itemService;
+
     @RequestMapping("/index")
     public String listRecipes(Model model) {
         List<Recipe> recipes = recipeService.findAll();
@@ -40,26 +44,7 @@ public class RecipeController {
         return "index";
     }
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String addRecipe(@Valid Recipe recipe, BindingResult result,
-                            @RequestParam(name = "item") String item,
-                            @RequestParam(name = "condition") String condition,
-                            @RequestParam(name = "quantity") String quantity
-            ) {
-
-        String[] items = item.split(",");
-        String[] conditions = condition.split(",");
-        String[] quantities = quantity.split(",");
-
-        List<Ingredient> ingredients = new ArrayList<>();
-        for (int i = 0; i < items.length; i++) {
-            ingredients.add(
-                    new Ingredient(
-                            items[i],
-                            conditions[i],
-                            Integer.parseInt(quantities[i]))
-            );
-        }
-        recipe.setIngredients(ingredients);
+    public String addRecipe(@Valid Recipe recipe, BindingResult result) {
         recipeService.save(recipe);
         return "redirect:/index";
     }
@@ -94,6 +79,7 @@ public class RecipeController {
         Recipe recipe = recipeService.findById(id);
         model.addAttribute("recipe", recipe);
         model.addAttribute("categories", Category.values());
+        model.addAttribute("items", itemService.findAll());
         return "edit";
     }
 

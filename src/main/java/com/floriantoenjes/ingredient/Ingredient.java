@@ -1,15 +1,15 @@
 package com.floriantoenjes.ingredient;
 
 import com.floriantoenjes.core.BaseEntity;
+import com.floriantoenjes.item.Item;
 import com.floriantoenjes.recipe.Recipe;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Ingredient extends BaseEntity {
-    private String name;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Item item;
     private String condition;
     private Integer quantity;
     @ManyToOne
@@ -18,18 +18,10 @@ public class Ingredient extends BaseEntity {
 
     public Ingredient(){}
 
-    public Ingredient(String name, String condition, Integer quantity) {
-        this.name = name;
+    public Ingredient(Item item, String condition, Integer quantity) {
+        this.item = item;
         this.condition = condition;
         this.quantity = quantity;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getCondition() {
@@ -54,5 +46,14 @@ public class Ingredient extends BaseEntity {
 
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
+    }
+
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }

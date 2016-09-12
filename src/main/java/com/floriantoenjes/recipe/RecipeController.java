@@ -2,6 +2,7 @@ package com.floriantoenjes.recipe;
 
 import com.floriantoenjes.ingredient.Ingredient;
 import com.floriantoenjes.ingredient.IngredientService;
+import com.floriantoenjes.item.ItemService;
 import com.floriantoenjes.step.Step;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,9 @@ public class RecipeController {
 
     @Autowired
     IngredientService ingredientService;
+
+    @Autowired
+    ItemService itemService;
 
     @RequestMapping("/index")
     public String listRecipes(Model model) {
@@ -76,6 +80,7 @@ public class RecipeController {
         model.addAttribute("recipe", recipe);
         model.addAttribute("ingredients", ingredientService.findAll());
         model.addAttribute("categories", Category.values());
+        model.addAttribute("items", itemService.findAll());
         return "edit";
     }
 

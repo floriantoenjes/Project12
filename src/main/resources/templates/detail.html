@@ -151,7 +151,7 @@
 
                 <div th:each="ingredient : ${recipe.ingredients}" class="ingredient-row">
                   <div class="prefix-20 grid-30">
-                    <p th:text="${ingredient.name}">
+                    <p th:text="${ingredient.item.name}">
                     </p>
                   </div>
                   <div class="grid-30">

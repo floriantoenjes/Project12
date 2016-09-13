@@ -54,6 +54,7 @@ public class RecipeController {
         model.addAttribute("recipe", new Recipe());
         model.addAttribute("ingredients", ingredientService.findAll());
         model.addAttribute("categories", Category.values());
+        model.addAttribute("items", itemService.findAll());
         return "edit";
     }
 
@@ -89,6 +90,11 @@ public class RecipeController {
         Recipe recipe = recipeService.findById(id);
         recipeService.delete(recipe);
         return "redirect:/index";
+    }
+
+    @RequestMapping("/profile")
+    public String profile() {
+        return "profile";
     }
 
     @RequestMapping("/logout")

@@ -135,6 +135,9 @@ public class Recipe extends BaseEntity {
 
     public void setSteps(List<Step> steps) {
         this.steps = steps;
+        for (Step step : steps) {
+            step.setRecipe(this);
+        }
     }
 
     public User getOwner() {

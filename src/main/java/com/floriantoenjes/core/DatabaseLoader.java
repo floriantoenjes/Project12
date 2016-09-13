@@ -23,10 +23,10 @@ import java.util.List;
 
 @Component
 public class DatabaseLoader implements ApplicationRunner {
-    RecipeRepository recipes;
-    UserRepository users;
-    RoleRepository roles;
     ItemRepository items;
+    RecipeRepository recipes;
+    RoleRepository roles;
+    UserRepository users;
 
     @Autowired
     public DatabaseLoader(RecipeRepository recipes, UserRepository users, RoleRepository roles, ItemRepository items) {

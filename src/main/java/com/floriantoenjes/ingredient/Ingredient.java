@@ -13,7 +13,7 @@ public class Ingredient extends BaseEntity {
     private String condition;
     private Integer quantity;
     @ManyToOne
-    @JoinColumn(name = "recipe_id")
+//    @JoinColumn(name = "recipe_id")
     private Recipe recipe;
 
     public Ingredient(){}
@@ -31,6 +31,7 @@ public class Ingredient extends BaseEntity {
 
     public void setItem(Item item) {
         this.item = item;
+        item.setIngredient(this);
     }
 
     public String getCondition() {

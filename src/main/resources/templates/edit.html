@@ -159,6 +159,9 @@
                 </div>
 
             <div class="ingredient-row" th:each="ingredient : ${ingredients}">
+              <input type="hidden" th:field="*{ingredients[__${ingredientStat.index}__]}"/>
+              <input type="hidden" th:field="*{ingredients[__${ingredientStat.index}__].id}"/>
+              <input type="hidden" th:field="*{ingredients[__${ingredientStat.index}__].version}"/>
                 <div class="prefix-20 grid-30">
                     <p>
                       <select th:field="*{ingredients[__${ingredientStat.index}__].item.name}">

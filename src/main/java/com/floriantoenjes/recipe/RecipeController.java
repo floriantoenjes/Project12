@@ -4,6 +4,8 @@ import com.floriantoenjes.ingredient.Ingredient;
 import com.floriantoenjes.ingredient.IngredientService;
 import com.floriantoenjes.item.ItemService;
 import com.floriantoenjes.step.Step;
+import com.floriantoenjes.user.User;
+import com.floriantoenjes.user.UserService;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -37,6 +39,9 @@ public class RecipeController {
     @Autowired
     ItemService itemService;
 
+    @Autowired
+    UserService userService;
+
     @RequestMapping("/index")
     public String listRecipes(Model model) {
         List<Recipe> recipes = recipeService.findAll();
@@ -65,6 +70,13 @@ public class RecipeController {
         Recipe recipe = recipeService.findById(id);
         Hibernate.initialize(recipe.getIngredients());
         Hibernate.initialize(recipe.getSteps());
+        Hibernate.initialize(recipe.getUsersFavorited());
+
+        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        if (recipe.getUsersFavorited().contains(user)) {
+            model.addAttribute("favorite", true);
+        }
+
         model.addAttribute("recipe", recipe);
         return "detail";
     }
@@ -72,7 +84,12 @@ public class RecipeController {
     @RequestMapping("/recipe/{id}/favorite")
     public String setFavorite(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
-        recipe.setFavorite(!recipe.isFavorite());
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        Hibernate.initialize(user.getFavorites());
+        user.addFavorite(recipe);
+        recipe.addUserFavorited(user);
+        userService.save(user);
         recipeService.save(recipe);
         return String.format("redirect:/recipe/%s", id);
     }

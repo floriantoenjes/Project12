@@ -8,10 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -26,6 +23,9 @@ public class User extends BaseEntity implements UserDetails {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Recipe> recipes;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Recipe> favorites;
 
     public User(){}
 
@@ -101,5 +101,17 @@ public class User extends BaseEntity implements UserDetails {
 
     public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;
+    }
+
+    public List<Recipe> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(List<Recipe> favorites) {
+        this.favorites = favorites;
+    }
+
+    public void addFavorite(Recipe recipe) {
+        favorites.add(recipe);
     }
 }

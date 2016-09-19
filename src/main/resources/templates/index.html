@@ -65,7 +65,7 @@
           <a th:href="|/recipe/${recipe.id}|">
             <div class="grid-70">
               <p>
-                <span><img th:src="${recipe.isFavorite} ? @{/images/favorited.svg} : @{/images/favorite.svg}" height="12px" th:text="' ' + ${recipe.name}"/> </span>
+                <span><img th:src="${favorite} ? @{/images/favorited.svg} : @{/images/favorite.svg}" height="12px" th:text="' ' + ${recipe.name}"/> </span>
                 <!--Baked Alaskan Salmon with Asparagus-->
               </p>
             </div>

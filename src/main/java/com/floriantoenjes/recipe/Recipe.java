@@ -36,6 +36,8 @@ public class Recipe extends BaseEntity {
     public boolean isFavorite;
     @ManyToOne
     private User owner;
+    @ManyToMany
+    private List<User> usersFavorited;
 
     public Recipe() {
     }
@@ -149,7 +151,16 @@ public class Recipe extends BaseEntity {
         this.owner = owner;
     }
 
+    public List<User> getUsersFavorited() {
+        return usersFavorited;
+    }
 
+    public void setUsersFavorited(List<User> usersFavorited) {
+        this.usersFavorited = usersFavorited;
+    }
 
+    public void addUserFavorited(User user) {
+        usersFavorited.add(user);
+    }
 }
 

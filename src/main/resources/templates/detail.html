@@ -48,7 +48,7 @@
           <div class="grid-50">
             <h2 class="flush-right">
               <a th:href="|/recipe/${recipe.id}/favorite|">
-                <img th:src="${recipe.isFavorite} ? @{/images/favorited.svg} : @{/images/favorite.svg}" height="16px"/>
+                <img th:src="${favorite} ? @{/images/favorited.svg} : @{/images/favorite.svg}" height="16px"/>
               </a>
             </h2>
           </div>

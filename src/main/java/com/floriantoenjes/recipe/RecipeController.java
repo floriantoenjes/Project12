@@ -12,6 +12,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,6 +38,9 @@ public class RecipeController {
     @Autowired
     ItemService itemService;
 
+    @Autowired
+    Validator validator;
+
     @RequestMapping("/index")
     public String listRecipes(Model model) {
         List<Recipe> recipes = recipeService.findAll();
@@ -45,6 +49,8 @@ public class RecipeController {
     }
     @RequestMapping(value = "/index", method = RequestMethod.POST)
     public String addRecipe(@Valid Recipe recipe, BindingResult result) {
+        recipe.getIngredients().forEach(i -> i.setRecipe(recipe));
+        recipe.getSteps().forEach(s -> s.setRecipe(recipe));
         recipeService.save(recipe);
         return "redirect:/index";
     }

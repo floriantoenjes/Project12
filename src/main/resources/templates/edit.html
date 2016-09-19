@@ -201,10 +201,12 @@
                     </p>
                   </div>
 
-                  <div class="step-row">
+                  <div th:each="step : *{steps}" class="step-row">
+                    <input type="hidden" th:field="*{steps[__${stepStat.index}__].id}"/>
+                    <input type="hidden" th:field="*{steps[__${stepStat.index}__].version}"/>
                     <div class="prefix-20 grid-80">
                       <p>
-                        <input th:field="*{steps}"></input>
+                        <input th:field="*{steps[__${stepStat.index}__].description}"></input>
                       </p>
                     </div>
                   </div>

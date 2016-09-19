@@ -19,7 +19,7 @@ public class UserController {
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String signup(User user) {
-        userService
+//        userService
         return "redirect:/index";
     }
 }

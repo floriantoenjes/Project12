@@ -44,7 +44,10 @@ public class RecipeController {
         return "index";
     }
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String addRecipe(@Valid Recipe recipe, BindingResult result) {
+    public String addRecipe(Recipe recipe, BindingResult result) {
+        System.out.println("BREAK");
+        recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
+        recipe.getSteps().forEach( i -> i.setRecipe(recipe));
         recipeService.save(recipe);
         return "redirect:/index";
     }

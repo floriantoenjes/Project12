@@ -16,11 +16,11 @@
 <body>
 
   <nav>
-    <a href="profile.html">
+    <a th:href="@{/profile.html}">
       <span sec:authentication="name"></span>
     </a>
     &bull;
-    <a href="login.html">
+    <a th:href="@{/logout}">
       logout
     </a>
   </nav>

@@ -114,4 +114,9 @@ public class User extends BaseEntity implements UserDetails {
     public void addFavorite(Recipe recipe) {
         favorites.add(recipe);
     }
+
+    public void removeFavorite(Recipe recipe) {
+        favorites.remove(recipe);
+    }
+
 }

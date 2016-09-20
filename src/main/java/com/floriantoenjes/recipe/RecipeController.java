@@ -46,8 +46,6 @@ public class RecipeController {
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         Map<Boolean, Recipe> recipeMap = new HashMap<>();
 
-
-
         recipes.forEach(r -> {
             Hibernate.initialize(r.getUsersFavorited());
             if (r.getUsersFavorited().contains(user)) {
@@ -56,12 +54,12 @@ public class RecipeController {
                 recipeMap.put(false, r);
             }
         });
+
         model.addAttribute("recipeMap", recipeMap);
         return "index";
     }
     @RequestMapping(value = "/index", method = RequestMethod.POST)
     public String addRecipe(Recipe recipe, BindingResult result) {
-        System.out.println("BREAK");
         recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
         recipe.getSteps().forEach( i -> i.setRecipe(recipe));
         recipeService.save(recipe);
@@ -95,11 +93,18 @@ public class RecipeController {
     @RequestMapping("/recipe/{id}/favorite")
     public String setFavorite(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         Hibernate.initialize(user.getFavorites());
-        user.addFavorite(recipe);
-        recipe.addUserFavorited(user);
+
+        List<Recipe> favorites = user.getFavorites();
+        if (favorites.contains(recipe)) {
+            favorites.remove(recipe);
+            recipe.removeUserFavorited(user);
+        } else {
+            user.addFavorite(recipe);
+            recipe.addUserFavorited(user);
+        }
+
         userService.save(user);
         recipeService.save(recipe);
         return String.format("redirect:/recipe/%s", id);

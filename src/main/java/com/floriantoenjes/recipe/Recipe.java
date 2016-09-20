@@ -162,5 +162,9 @@ public class Recipe extends BaseEntity {
     public void addUserFavorited(User user) {
         usersFavorited.add(user);
     }
+
+    public void removeUserFavorited(User user) {
+        usersFavorited.remove(user);
+    }
 }
 

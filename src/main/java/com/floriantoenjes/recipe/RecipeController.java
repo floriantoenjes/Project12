@@ -23,9 +23,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Controller
 public class RecipeController {
@@ -45,7 +43,20 @@ public class RecipeController {
     @RequestMapping("/index")
     public String listRecipes(Model model) {
         List<Recipe> recipes = recipeService.findAll();
-        model.addAttribute("recipes", recipes);
+        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        Map<Boolean, Recipe> recipeMap = new HashMap<>();
+
+
+
+        recipes.forEach(r -> {
+            Hibernate.initialize(r.getUsersFavorited());
+            if (r.getUsersFavorited().contains(user)) {
+                recipeMap.put(true, r);
+            } else {
+                recipeMap.put(false, r);
+            }
+        });
+        model.addAttribute("recipeMap", recipeMap);
         return "index";
     }
     @RequestMapping(value = "/index", method = RequestMethod.POST)

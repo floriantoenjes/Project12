@@ -16,9 +16,9 @@ function addIngredient() {
                 '<input id="ingredients' + current + '.id"' + ' name="ingredients[' + current + '].id" type="hidden"/>' +
                 '<input id="ingredients' + current + '.version"' + ' name="ingredients[' + current + '].version" type="hidden"/>' +
                 '<p>' +
-                    '<select id="ingredients' + current + '.item.name" name="ingredients[' + current + '].item.name">'
+                    '<select id="ingredients' + current + '.item.name" name="ingredients[' + current + '].item.name">' +
 
-                    '</select>'
+                    '</select>' +
                 '/<p>' +
             '</div>' +
         '</div>'

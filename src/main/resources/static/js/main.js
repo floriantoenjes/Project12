@@ -4,23 +4,15 @@ $("#add-ingredient").click(function(event) {
 });
 
 function addIngredient() {
-    var $ingredient = $(".ingredient-row:last");
-    var inputIdName = $ingredient.children().first().children().first().attr("name");
-    var current = parseInt(inputIdName.match("\\d"));
-    var n = current + 1;
+    var $lastIngredient = $(".ingredient-row:last");
+    var lastId = $lastIngredient.children().first().children().first().attr("id").match("\\d+")[0];
+    var newId = (parseInt(lastId) + 1).toString();
+    var $newIngredient = $lastIngredient.clone();
 
-    alert(n);
+    var regex1 = new RegExp("ingredients" + lastId, "g");
+    var regex2 = new RegExp("\\[" + lastId + "\\]", "g");
 
-    $ingredient.after($('<div class="ingredient-row">' +
-            '<div class="prefix-20 grid-30">' +
-                '<input id="ingredients' + current + '.id"' + ' name="ingredients[' + current + '].id" type="hidden"/>' +
-                '<input id="ingredients' + current + '.version"' + ' name="ingredients[' + current + '].version" type="hidden"/>' +
-                '<p>' +
-                    '<select id="ingredients' + current + '.item.name" name="ingredients[' + current + '].item.name">' +
-
-                    '</select>' +
-                '</p>' +
-            '</div>' +
-        '</div>'
-    ));
+    var newHtml = $newIngredient.html().replace(regex1, "ingredients" + newId).replace(regex2, "[" + newId + "]");
+    $newIngredient.html(newHtml);
+    $lastIngredient.after($newIngredient);
 }

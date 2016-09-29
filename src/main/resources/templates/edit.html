@@ -166,7 +166,6 @@
                             <select th:field="*{ingredients[__${ingredientStat.index}__].item.name}">
                                 <option th:each="item : ${items}" th:value="${item.name}" th:text="${item.name}"></option>
                             </select>
-                            <!--<input th:field="*{ingredients[__${ingredientStat.index}__].name}"/>-->
                         </p>
                     </div>
                     <div class="grid-30">

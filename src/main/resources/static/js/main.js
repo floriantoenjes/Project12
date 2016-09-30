@@ -56,6 +56,5 @@ function addstep() {
 
 $("#category-select").change(function(event) {
     var value = $(event.target).val();
-    alert(value);
     window.location = "/index?category=" + value;
 })

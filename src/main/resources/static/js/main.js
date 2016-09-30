@@ -1,56 +1,56 @@
 $("#add-ingredient").click(function(event) {
-    event.preventdefault();
-    addingredient();
+    event.preventDefault();
+    addIngredient();
 });
 
-function addingredient() {
-    var $lastingredient = $(".ingredient-row:last");
+function addIngredient() {
+    var $lastIngredient = $(".ingredient-row:last");
 
     // get id of last ingredient-row
-    var lastid = $lastingredient.children().first().children().first().attr("id").match("\\d+")[0];
+    var lastId = $lastIngredient.children().first().children().first().attr("id").match("\\d+")[0];
 
     // increment to new id
-    var newid = (parseint(lastid) + 1).tostring();
+    var newId = (parseInt(lastId) + 1).toString();
 
-    var $newingredient = $lastingredient.clone();
+    var $newIngredient = $lastIngredient.clone();
 
     // remove id and version hidden input nodes
-    $newingredient.children().first().children().first().remove();
-    $newingredient.children().first().children().first().remove();
+    $newIngredient.children().first().children().first().remove();
+    $newIngredient.children().first().children().first().remove();
 
     // replace id and name to be of the new id
-    var regex1 = new regexp("ingredients" + lastid, "g");
-    var regex2 = new regexp("\\[" + lastid + "\\]", "g");
-    var newhtml = $newingredient.html().replace(regex1, "ingredients" + newid).replace(regex2, "[" + newid + "]");
+    var regex1 = new RegExp("ingredients" + lastId, "g");
+    var regex2 = new RegExp("\\[" + lastId + "\\]", "g");
+    var newHtml = $newIngredient.html().replace(regex1, "ingredients" + newId).replace(regex2, "[" + newId + "]");
 
-    $newingredient.html(newhtml);
-    $lastingredient.after($newingredient);
+    $newIngredient.html(newHtml);
+    $lastIngredient.after($newIngredient);
 }
 
 $("#add-step").click(function(event) {
-    event.preventdefault();
-    addstep();
+    event.preventDefault();
+    addStep();
 });
 
-function addstep() {
-    var $laststep = $(".step-row:last");
+function addStep() {
+    var $lastStep = $(".step-row:last");
 
-    var lastid = $(".step-row:last").children().first().attr("id").match("\\d+")[0];
+    var lastId = $(".step-row:last").children().first().attr("id").match("\\d+")[0];
 
-    var newid = (parseint(lastid) + 1).tostring();
+    var newId = (parseInt(lastId) + 1).toString();
 
-    var $newstep = $laststep.clone();
+    var $newStep = $lastStep.clone();
 
-    $laststep.children().first().remove();
-    $laststep.children().first().remove();
+    $lastStep.children().first().remove();
+    $lastStep.children().first().remove();
 
-    var regex1 = new regexp("steps" + lastid, "g");
-    var regex2 = new regexp("\\[" + lastid + "\\]", "g");
+    var regex1 = new RegExp("steps" + lastId, "g");
+    var regex2 = new RegExp("\\[" + lastId + "\\]", "g");
 
-    var newhtml = $newstep.html().replace(regex1, "steps" + newid).replace(regex2, "[" + newid + "]");
+    var newHtml = $newStep.html().replace(regex1, "steps" + newId).replace(regex2, "[" + newId + "]");
 
-    $newstep.html(newhtml);
-    $laststep.after($newstep);
+    $newStep.html(newHtml);
+    $lastStep.after($newStep);
 
 }
 

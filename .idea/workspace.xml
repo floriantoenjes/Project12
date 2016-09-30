@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="">
+    <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="Added &quot;selected&quot; to Thymeleaf index template to show selected category">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" />
     </list>
     <ignored path="Recipe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RecipeController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RecipeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+            <state relative-caret-position="340">
+              <caret line="80" column="71" selection-start-line="80" selection-start-column="71" selection-end-line="80" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -98,8 +97,8 @@
       <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3825">
-              <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="226" selection-end-column="51" />
+            <state relative-caret-position="3621">
+              <caret line="213" column="23" selection-start-line="213" selection-start-column="23" selection-end-line="213" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -108,14 +107,14 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state relative-caret-position="450">
+              <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -566,9 +565,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/detail.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/edit.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/edit.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/main.js" />
       </list>
     </option>
   </component>
@@ -1168,7 +1167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475222434818</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Added &quot;selected&quot; to Thymeleaf index template to show selected category">
+      <created>1475229477703</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1475229477703</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1251,7 +1257,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Major changes" />
     <MESSAGE value="Minor changes." />
     <MESSAGE value="Started implementing user login" />
     <MESSAGE value="Started implementing user login 2" />
@@ -1276,7 +1281,8 @@
     <MESSAGE value="Trying to get adding of ingredients to work" />
     <MESSAGE value="Made filtering for categories work." />
     <MESSAGE value="Minor change." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor change." />
+    <MESSAGE value="Added &quot;selected&quot; to Thymeleaf index template to show selected category" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;selected&quot; to Thymeleaf index template to show selected category" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1609,14 +1615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3825">
-          <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="226" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Category.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1643,22 +1641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/core/DatabaseLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1671,6 +1653,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3621">
+          <caret line="213" column="23" selection-start-line="213" selection-start-column="23" selection-end-line="213" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="80" column="71" selection-start-line="80" selection-start-column="71" selection-end-line="80" selection-end-column="71" />
           <folding />
         </state>
       </provider>

@@ -50,6 +50,7 @@ public class RecipeController {
             recipes = recipes.stream().filter(recipe -> {
                 return recipe.getCategory().name().equalsIgnoreCase(category);
             }).collect(Collectors.toList());
+            model.addAttribute(category, true);
         }
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         Map<Boolean, Recipe> recipeMap = new HashMap<>();

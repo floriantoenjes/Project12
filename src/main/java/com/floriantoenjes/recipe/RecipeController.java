@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Controller
 public class RecipeController {
@@ -41,17 +42,24 @@ public class RecipeController {
     UserService userService;
 
     @RequestMapping("/index")
-    public String listRecipes(Model model) {
+    public String listRecipes(@RequestParam(value = "category", required = false) String category, Model model) {
         List<Recipe> recipes = recipeService.findAll();
+
+        // Filter for category
+        if (category != null && !category.isEmpty()) {
+            recipes = recipes.stream().filter(recipe -> {
+                return recipe.getCategory().name().equalsIgnoreCase(category);
+            }).collect(Collectors.toList());
+        }
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         Map<Boolean, Recipe> recipeMap = new HashMap<>();
 
-        recipes.forEach(r -> {
-            Hibernate.initialize(r.getUsersFavorited());
-            if (r.getUsersFavorited().contains(user)) {
-                recipeMap.put(true, r);
+        recipes.forEach(recipe -> {
+            Hibernate.initialize(recipe.getUsersFavorited());
+            if (recipe.getUsersFavorited().contains(user)) {
+                recipeMap.put(true, recipe);
             } else {
-                recipeMap.put(false, r);
+                recipeMap.put(false, recipe);
             }
         });
 

@@ -2,6 +2,7 @@ package com.floriantoenjes.recipe;
 
 import com.floriantoenjes.ingredient.Ingredient;
 import com.floriantoenjes.ingredient.IngredientService;
+import com.floriantoenjes.item.Item;
 import com.floriantoenjes.item.ItemService;
 import com.floriantoenjes.step.Step;
 import com.floriantoenjes.user.User;
@@ -67,6 +68,7 @@ public class RecipeController {
         model.addAttribute("recipeMap", recipeMap);
         return "index";
     }
+
     @RequestMapping(value = "/index", method = RequestMethod.POST)
     public String addRecipe(Recipe recipe, BindingResult result) {
         recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
@@ -77,8 +79,11 @@ public class RecipeController {
 
     @RequestMapping("/add")
     public String recipeForm(Model model) {
-        model.addAttribute("recipe", new Recipe());
-        model.addAttribute("ingredients", ingredientService.findAll());
+        Recipe recipe = new Recipe();
+        recipe.addIngredient(new Ingredient(new Item(""), "", 0));
+        recipe.addStep(new Step(""));
+        model.addAttribute("recipe", recipe);
+        model.addAttribute("items", itemService.findAll());
         model.addAttribute("categories", Category.values());
         return "edit";
     }

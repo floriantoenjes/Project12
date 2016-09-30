@@ -40,6 +40,8 @@ public class Recipe extends BaseEntity {
     private List<User> usersFavorited;
 
     public Recipe() {
+        this.ingredients = new ArrayList<>();
+        this.steps = new ArrayList<>();
     }
 
     public Recipe(String photo, String name, String description, Category category, Integer prepTime, Integer cookTime) {
@@ -50,8 +52,6 @@ public class Recipe extends BaseEntity {
         this.category = category;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
-        this.ingredients = new ArrayList<>();
-        this.steps = new ArrayList<>();
     }
 
     public String getPhoto() {

@@ -62,10 +62,10 @@
         </div> <div class="clear"></div>
 
         <div class="grid-100 row addHover" th:each="recipeEntry : ${recipeMap}">
-          <a th:href="|/recipe/${recipeEntry.value.id}|">
+          <a th:href="|/recipe/${recipeEntry.key.id}|">
             <div class="grid-70">
               <p>
-                <span><img th:src="${recipeEntry.key} ? @{/images/favorited.svg} : @{/images/favorite.svg}" height="12px" th:text="' ' + ${recipeEntry.value.name}"/> </span>
+                <span><img th:src="${recipeEntry.value} ? @{/images/favorited.svg} : @{/images/favorite.svg}" height="12px" th:text="' ' + ${recipeEntry.key.name}"/> </span>
                 <!--Baked Alaskan Salmon with Asparagus-->
               </p>
             </div>
@@ -74,8 +74,8 @@
             <div class="grid-30">
               <div class="flush-right">
                 <p>
-                  <a th:href="|/recipe/${recipeEntry.value.id}/edit|"> <img src="images/edit.svg" height="12px"/> Edit </a>
-                  <a th:href="|/recipe/${recipeEntry.value.id}/delete|"> <img src="images/delete.svg" height="12px"/> Delete </a>
+                  <a th:href="|/recipe/${recipeEntry.key.id}/edit|"> <img src="images/edit.svg" height="12px"/> Edit </a>
+                  <a th:href="|/recipe/${recipeEntry.key.id}/delete|"> <img src="images/delete.svg" height="12px"/> Delete </a>
                 </p>
               </div>
             </div>

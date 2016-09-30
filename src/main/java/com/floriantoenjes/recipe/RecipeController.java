@@ -54,14 +54,14 @@ public class RecipeController {
             model.addAttribute(category, true);
         }
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
-        Map<Boolean, Recipe> recipeMap = new HashMap<>();
+        Map<Recipe, Boolean> recipeMap = new HashMap<>();
 
         recipes.forEach(recipe -> {
             Hibernate.initialize(recipe.getUsersFavorited());
             if (recipe.getUsersFavorited().contains(user)) {
-                recipeMap.put(true, recipe);
+                recipeMap.put(recipe, true);
             } else {
-                recipeMap.put(false, recipe);
+                recipeMap.put(recipe, false);
             }
         });
 

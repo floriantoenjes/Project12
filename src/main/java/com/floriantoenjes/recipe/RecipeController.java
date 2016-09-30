@@ -43,11 +43,18 @@ public class RecipeController {
     UserService userService;
 
     @RequestMapping("/index")
-    public String listRecipes(@RequestParam(value = "category", required = false) String category, Model model) {
+    public String listRecipes(@RequestParam(value = "category", required = false) String category,
+                              @RequestParam(value = "q", required = false) String q, Model model) {
         List<Recipe> recipes = recipeService.findAll();
 
+        // Search recipes
+        if (q != null && !q.isEmpty()) {
+            recipes = recipes.stream().filter( recipe -> recipe.getName().toLowerCase().contains(q.toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+
         // Filter for category
-        if (category != null && !category.isEmpty()) {
+        else if (category != null && !category.isEmpty()) {
             recipes = recipes.stream().filter(recipe -> {
                 return recipe.getCategory().name().equalsIgnoreCase(category);
             }).collect(Collectors.toList());

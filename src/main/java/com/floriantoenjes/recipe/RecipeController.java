@@ -47,19 +47,22 @@ public class RecipeController {
                               @RequestParam(value = "q", required = false) String q, Model model) {
         List<Recipe> recipes = recipeService.findAll();
 
-        // Search recipes
+        // If there is a query then search the recipes
         if (q != null && !q.isEmpty()) {
             recipes = recipes.stream().filter( recipe -> recipe.getName().toLowerCase().contains(q.toLowerCase()))
                     .collect(Collectors.toList());
         }
 
-        // Filter for category
+        // Else if there is a category given then  filter for category
         else if (category != null && !category.isEmpty()) {
             recipes = recipes.stream().filter(recipe -> {
                 return recipe.getCategory().name().equalsIgnoreCase(category);
             }).collect(Collectors.toList());
             model.addAttribute(category, true);
         }
+
+        // Else just show all recipes
+
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         Map<Recipe, Boolean> recipeMap = new HashMap<>();
 

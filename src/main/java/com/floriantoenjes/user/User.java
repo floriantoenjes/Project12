@@ -9,15 +9,20 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 @Entity
 public class User extends BaseEntity implements UserDetails {
+    @Size(min = 4, max = 20)
     private String username;
+    @Size(min = 8, max = 20)
     private String password;
 
+    @NotNull
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Role role;
 
@@ -31,9 +36,9 @@ public class User extends BaseEntity implements UserDetails {
 
     public User(String username, String password, Role role) {
         this.username = username;
-        role.setUser(this);
         this.password = password;
         this.role = role;
+        role.setUser(this);
     }
 
     @Override

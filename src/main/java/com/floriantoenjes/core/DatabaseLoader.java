@@ -43,7 +43,7 @@ public class DatabaseLoader implements ApplicationRunner {
         recipe.addStep(step);
         recipes.save(recipe);
 
-        User user = new User("sa", "sa", new Role("ROLE_USER"));
+        User user = new User("user", "password", new Role("ROLE_USER"));
         users.save(user);
     }
 }

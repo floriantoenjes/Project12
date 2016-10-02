@@ -29,7 +29,7 @@ public class UserController {
     public String signup(@Valid User user, BindingResult result, RedirectAttributes redirectAttributes) {
 
         if (result.hasErrors()) {
-            redirectAttributes.addAttribute("org.springframework.validation.BindingResult.user", user);
+            redirectAttributes.addAttribute("org.springframework.validation.BindingResult.user", result);
             redirectAttributes.addAttribute("user", user);
             return "redirect:/signup";
         }

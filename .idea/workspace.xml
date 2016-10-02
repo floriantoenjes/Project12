@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/web/FlashMessage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" />
     </list>
     <ignored path="Recipe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +44,8 @@
       <file leaf-file-name="RecipeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="294">
+              <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -104,8 +103,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+            <state relative-caret-position="451">
+              <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -550,12 +549,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/edit.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/edit.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/core/DatabaseLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/web/FlashMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/main.js" />
       </list>
     </option>
   </component>
@@ -1384,7 +1383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475304074800</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Added FlashMessage and redirecting if result has errors in RecipeController /add route">
+      <created>1475396079188</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1475396079188</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1467,7 +1473,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Started implementing user login 2" />
     <MESSAGE value="Edited user and role entities" />
     <MESSAGE value="Edited login template" />
     <MESSAGE value="Edited login" />
@@ -1492,7 +1497,8 @@
     <MESSAGE value="Added &quot;selected&quot; to Thymeleaf index template to show selected category" />
     <MESSAGE value="Started implementing the search feature." />
     <MESSAGE value="Started implementing User validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started implementing User validation" />
+    <MESSAGE value="Added FlashMessage and redirecting if result has errors in RecipeController /add route" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added FlashMessage and redirecting if result has errors in RecipeController /add route" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1821,14 +1827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -1878,10 +1876,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="294">
+          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
           <folding />
         </state>
       </provider>

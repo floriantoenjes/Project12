@@ -61,7 +61,6 @@ $("#category-select").change(function(event) {
 
 $("#search-field").keyup(function(event) {
     if (event.keyCode === 13) {
-        alert("Search");
         var value = $(event.target).val();
         window.location = "/index?q=" + value;
     }

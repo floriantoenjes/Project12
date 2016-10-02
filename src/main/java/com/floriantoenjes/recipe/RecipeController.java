@@ -90,8 +90,8 @@ public class RecipeController {
         recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
         recipe.getSteps().forEach( i -> i.setRecipe(recipe));
 
+        // Validate the recipe
         validator.validate(recipe, result);
-
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.recipe", result);
             redirectAttributes.addFlashAttribute("recipe", recipe);

@@ -22,7 +22,7 @@ public class Recipe extends BaseEntity {
     private String name;
     @Size(min = 5, max = 250)
     private String description;
-//    @NotNull
+    @NotNull
     private Category category;
     @Range(min = 0, max = 2000)
     private Integer prepTime;

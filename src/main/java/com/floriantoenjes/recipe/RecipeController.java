@@ -7,6 +7,7 @@ import com.floriantoenjes.item.ItemService;
 import com.floriantoenjes.step.Step;
 import com.floriantoenjes.user.User;
 import com.floriantoenjes.user.UserService;
+import com.floriantoenjes.web.FlashMessage;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -15,10 +16,12 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,6 +44,9 @@ public class RecipeController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    Validator validator;
 
     @RequestMapping("/index")
     public String listRecipes(@RequestParam(value = "category", required = false) String category,
@@ -80,19 +86,30 @@ public class RecipeController {
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String addRecipe(Recipe recipe, BindingResult result) {
+    public String addRecipe(Recipe recipe, BindingResult result, RedirectAttributes redirectAttributes) {
         recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
         recipe.getSteps().forEach( i -> i.setRecipe(recipe));
+
+        validator.validate(recipe, result);
+
+        if (result.hasErrors()) {
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.recipe", result);
+            redirectAttributes.addFlashAttribute("recipe", recipe);
+            return "redirect:/add";
+        }
+
         recipeService.save(recipe);
         return "redirect:/index";
     }
 
     @RequestMapping("/add")
     public String recipeForm(Model model) {
-        Recipe recipe = new Recipe();
-        recipe.addIngredient(new Ingredient(new Item(""), "", 0));
-        recipe.addStep(new Step(""));
-        model.addAttribute("recipe", recipe);
+        if (!model.containsAttribute("recipe")) {
+            Recipe recipe = new Recipe();
+            recipe.addIngredient(new Ingredient(new Item(""), "", 0));
+            recipe.addStep(new Step(""));
+            model.addAttribute("recipe", recipe);
+        }
         model.addAttribute("items", itemService.findAll());
         model.addAttribute("categories", Category.values());
         return "edit";

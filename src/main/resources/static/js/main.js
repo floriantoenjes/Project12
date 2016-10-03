@@ -65,3 +65,7 @@ $("#search-field").keyup(function(event) {
         window.location = "/index?q=" + value;
     }
 })
+
+function hide() {
+            document.getElementById("flash").hidden = true;
+}

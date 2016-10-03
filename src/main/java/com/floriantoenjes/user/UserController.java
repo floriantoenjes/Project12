@@ -1,5 +1,6 @@
 package com.floriantoenjes.user;
 
+import com.floriantoenjes.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -36,7 +37,9 @@ public class UserController {
 
         user.setRole(new Role("ROLE_USER"));
         userService.save(user);
-        return "redirect:/index";
+        redirectAttributes.addFlashAttribute("flash", new FlashMessage(String.format("Account %s has been created",
+                user.getUsername()), FlashMessage.Status.SUCCESS));
+        return "redirect:/login";
     }
 
     @RequestMapping("/profile")

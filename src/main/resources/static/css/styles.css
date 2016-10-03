@@ -117,3 +117,23 @@ button {
 /*.error-message {
 
 }*/
+
+.flash {
+    border-radius: 6px;
+    color: white;
+    padding: 0.5em;
+}
+
+.flash.success {
+    background-color: #87bc2d;
+}
+
+i {
+    float: right;
+    color: white;
+    margin: 5px;
+}
+
+i:hover {
+    cursor: pointer;
+}

@@ -14,7 +14,9 @@
 </head>
 
 <body>
-
+  <div th:if="${flash != null}" class="container" id="flash">
+    <div th:classappend="${#strings.toLowerCase(flash.status)}" th:text="${flash.message}" class="flash"></div>
+  </div>
   <nav>
     <a th:href="@{/signup}">
       sign-up

@@ -19,14 +19,14 @@ public class LoginController {
     @RequestMapping(path = "/login", method = RequestMethod.GET)
     public String loginForm(Model model, HttpServletRequest request) {
         model.addAttribute("user", new User());
-        try {
+        /*try {
             Object flash = request.getSession().getAttribute("flash");
             model.addAttribute("flash", flash);
 
             request.getSession().removeAttribute("flash");
         } catch (Exception ex) {
             // "flash" session attribute must not exist...do nothing and proceed normally
-        }
+        }*/
         return "login";
     }
 

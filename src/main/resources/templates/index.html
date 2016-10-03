@@ -14,7 +14,10 @@
 </head>
 
 <body>
-
+  <div th:if="${flash != null}" class="container" id="flash">
+    <i class="right material-icons" data-close="" onclick="hide()">close</i>
+    <div th:classappend="${#strings.toLowerCase(flash.status)}" th:text="${flash.message}" class="flash"></div>
+  </div>
   <nav>
     <a href="profile.html">
       <span sec:authentication="name"></span>

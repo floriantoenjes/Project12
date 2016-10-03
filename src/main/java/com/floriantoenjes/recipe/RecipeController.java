@@ -98,6 +98,9 @@ public class RecipeController {
             return "redirect:/add";
         }
 
+        redirectAttributes.addFlashAttribute("flash", new FlashMessage("Recipe created",
+                FlashMessage.Status.SUCCESS));
+
         recipeService.save(recipe);
         return "redirect:/index";
     }
@@ -112,6 +115,7 @@ public class RecipeController {
         }
         model.addAttribute("items", itemService.findAll());
         model.addAttribute("categories", Category.values());
+        model.addAttribute("action", "/index");
         return "edit";
     }
 
@@ -157,7 +161,28 @@ public class RecipeController {
         model.addAttribute("recipe", recipe);
         model.addAttribute("categories", Category.values());
         model.addAttribute("items", itemService.findAll());
+        model.addAttribute("action", String.format("/recipe/%s/edit", id));
         return "edit";
+    }
+
+    @RequestMapping(value = "/recipe/{id}/edit", method = RequestMethod.POST)
+    public String editRecipe(@PathVariable Long id, Recipe recipe, BindingResult result, RedirectAttributes redirectAttributes) {
+        recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
+        recipe.getSteps().forEach( i -> i.setRecipe(recipe));
+
+        // Validate the recipe
+        validator.validate(recipe, result);
+        if (result.hasErrors()) {
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.recipe", result);
+            redirectAttributes.addFlashAttribute("recipe", recipe);
+            return String.format("/recipe/%s/edit", id);
+        }
+
+        redirectAttributes.addFlashAttribute("flash", new FlashMessage("Recipe updated",
+                FlashMessage.Status.SUCCESS));
+
+        recipeService.save(recipe);
+        return "redirect:/index";
     }
 
     @RequestMapping("/recipe/{id}/delete")

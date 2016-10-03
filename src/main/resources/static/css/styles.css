@@ -108,3 +108,8 @@ button {
   float: right; }
 
 /*# sourceMappingURL=styles.css.map */
+
+.error {
+        background-color: #ac4343;
+        color: white;
+}

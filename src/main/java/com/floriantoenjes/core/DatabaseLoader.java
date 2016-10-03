@@ -47,19 +47,30 @@ public class DatabaseLoader implements ApplicationRunner {
         items.save(new Item("Strawberries"));
 
 
-        // Create a recipe
+        // Mock recipe 1
         Ingredient egg = new Ingredient(new Item("Eggs"), "fresh", 2);
         Ingredient ham = new Ingredient(new Item("Ham"), "fresh", 4);
-        Step step1 = new Step("1. Buy the groceries");
-        Step step2 = new Step("2. Roast the ham");
-        Recipe recipe = new Recipe("http://abc.com", "Ham and Eggs", "Tasty",
+        Step step11 = new Step("1. Buy the groceries");
+        Step step12 = new Step("2. Roast the ham");
+        Recipe recipe = new Recipe("http://abc.com", "Ham and Eggs", "A tasty breakfast meal",
                 Category.Breakfast, 20, 10);;
         recipe.addIngredient(egg);
         recipe.addIngredient(ham);
-        recipe.addStep(step1);
-        recipe.addStep(step2);
+        recipe.addStep(step11);
+        recipe.addStep(step12);
         recipes.save(recipe);
 
+
+        // Mock recipe 2
+        Ingredient chocolate = new Ingredient(new Item("Chocolate"), "bar", 2);
+        Step step21 = new Step("Mix the chocolate");
+        Recipe recipe2 = new Recipe("http://example.com", "Chocolate Smoothie", "A very high sugar drink",
+                Category.Dessert, 5, 0);
+        recipe2.addIngredient(chocolate);
+        recipe2.addStep(step21);
+        recipes.save(recipe2);
+
+        // Create a mock user
         User user = new User("user", "password", new Role("ROLE_USER"));
         users.save(user);
     }

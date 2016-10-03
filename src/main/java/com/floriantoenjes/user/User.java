@@ -22,7 +22,6 @@ public class User extends BaseEntity implements UserDetails {
     @Size(min = 8, max = 20)
     private String password;
 
-    @NotNull
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Role role;
 

@@ -96,6 +96,9 @@ public class RecipeController {
         recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
         recipe.getSteps().forEach( i -> i.setRecipe(recipe));
 
+        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        recipe.setOwner(user);
+
         // Validate the recipe
         validator.validate(recipe, result);
         if (result.hasErrors()) {
@@ -195,6 +198,14 @@ public class RecipeController {
     @RequestMapping("/recipe/{id}/delete")
     public String deleteRecipe(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         Recipe recipe = recipeService.findById(id);
+        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+
+        // Let only the owner delete his recipe
+        if (!user.equals(recipe.getOwner())) {
+            redirectAttributes.addFlashAttribute("flash", new FlashMessage("You are not allowed to delete this recipe",
+                    FlashMessage.Status.FAILED));
+            return "redirect:/index";
+        }
         redirectAttributes.addFlashAttribute("flash", new FlashMessage("Recipe has been deleted",
                 FlashMessage.Status.SUCCESS));
         recipeService.delete(recipe);

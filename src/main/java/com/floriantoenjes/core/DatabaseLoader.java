@@ -38,6 +38,9 @@ public class DatabaseLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        // Create a mock user
+        User user = new User("user", "password", new Role("ROLE_USER"));
+        users.save(user);
 
         // Create some items
         items.save(new Item("Tomatoes"));
@@ -58,6 +61,7 @@ public class DatabaseLoader implements ApplicationRunner {
         recipe.addIngredient(ham);
         recipe.addStep(step11);
         recipe.addStep(step12);
+        recipe.setOwner(user);
         recipes.save(recipe);
 
 
@@ -68,10 +72,8 @@ public class DatabaseLoader implements ApplicationRunner {
                 Category.Dessert, 5, 0);
         recipe2.addIngredient(chocolate);
         recipe2.addStep(step21);
+        recipe2.setOwner(user);
         recipes.save(recipe2);
 
-        // Create a mock user
-        User user = new User("user", "password", new Role("ROLE_USER"));
-        users.save(user);
     }
 }

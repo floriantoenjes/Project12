@@ -33,6 +33,7 @@ public class Recipe extends BaseEntity {
     // Todo: Should this be private?
     public boolean isFavorite;
     @ManyToOne
+    @NotNull
     private User owner;
     @ManyToMany
     private List<User> usersFavorited;
@@ -145,7 +146,7 @@ public class Recipe extends BaseEntity {
     }
 
     public void setOwner(User owner) {
-        owner.addRecipe(this);
+//        owner.addRecipe(this);
         this.owner = owner;
     }
 

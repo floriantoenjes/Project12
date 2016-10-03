@@ -66,6 +66,11 @@ $("#search-field").keyup(function(event) {
     }
 })
 
+$("#cancel-button").click(function(event) {
+    event.preventDefault();
+    window.location = "/index";
+})
+
 function hide() {
             document.getElementById("flash").hidden = true;
 }

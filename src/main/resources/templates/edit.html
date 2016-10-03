@@ -64,7 +64,8 @@
           </div>
           <div class="grid-40">
             <p>
-              <input th:field="*{photo}" placeholder="Url"> </input>
+              <input th:field="*{photo}" th:classappend="${#fields.hasErrors('photo')}? 'error' : ''" placeholder="Url"> </input>
+              <div class="error-message" th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}"></div>
             </p>
           </div>
         </div> <div class="clear"></div>
@@ -77,7 +78,8 @@
           </div>
           <div class="grid-40">
             <p>
-              <input th:field="*{name}"> </input>
+              <input th:field="*{name}" th:classappend="${#fields.hasErrors('name')}? 'error' : ''"> </input>
+              <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
             </p>
           </div>
         </div> <div class="clear"></div>
@@ -90,7 +92,8 @@
           </div>
           <div class="grid-40">
             <p>
-              <textarea th:field="*{description}"> </textarea>
+              <textarea th:field="*{description}" th:classappend="${#fields.hasErrors('description')}? 'error' : ''"> </textarea>
+              <div class="error-message" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
             </p>
           </div>
         </div> <div class="clear"></div>
@@ -118,7 +121,8 @@
           </div>
           <div class="grid-20">
             <p>
-              <input th:field="*{prepTime}"> </input>
+              <input th:field="*{prepTime}" th:classappend="${#fields.hasErrors('prepTime')}? 'error' : ''"> </input>
+              <div class="error-message" th:if="${#fields.hasErrors('prepTime')}" th:errors="*{prepTime}"></div>
             </p>
           </div>
         </div> <div class="clear"></div>

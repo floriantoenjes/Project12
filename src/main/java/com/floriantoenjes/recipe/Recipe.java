@@ -4,8 +4,6 @@ import com.floriantoenjes.core.BaseEntity;
 import com.floriantoenjes.ingredient.Ingredient;
 import com.floriantoenjes.step.Step;
 import com.floriantoenjes.user.User;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -18,15 +16,15 @@ public class Recipe extends BaseEntity {
 
     @Size(min = 3, max = 250)
     private String photo;
-    @Size(min = 3, max = 250)
+    @Size(min = 3, max = 40)
     private String name;
     @Size(min = 5, max = 250)
     private String description;
     @NotNull
     private Category category;
-    @Range(min = 0, max = 2000)
+    @NotNull(message = "has to have a prep time")
     private Integer prepTime;
-    @Range(min = 0, max = 2000)
+
     private Integer cookTime;
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     private List<Ingredient> ingredients;

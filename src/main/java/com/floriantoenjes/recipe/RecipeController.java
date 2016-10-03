@@ -175,7 +175,7 @@ public class RecipeController {
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.recipe", result);
             redirectAttributes.addFlashAttribute("recipe", recipe);
-            return String.format("/recipe/%s/edit", id);
+            return String.format("redirect:/recipe/%s/edit", id);
         }
 
         redirectAttributes.addFlashAttribute("flash", new FlashMessage("Recipe updated",

@@ -167,8 +167,8 @@
                         <input type="hidden" th:field="*{ingredients[__${ingredientStat.index}__].id}"/>
                         <input type="hidden" th:field="*{ingredients[__${ingredientStat.index}__].version}"/>
                         <p>
-                            <select th:field="*{ingredients[__${ingredientStat.index}__].item.name}">
-                                <option th:each="item : ${items}" th:value="${item.name}" th:text="${item.name}"></option>
+                            <select th:field="*{ingredients[__${ingredientStat.index}__].item}">
+                                <option th:each="item : ${items}" th:value="${item.id}" th:text="${item.name}"></option>
                             </select>
                         </p>
                     </div>

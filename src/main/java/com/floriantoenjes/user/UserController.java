@@ -2,7 +2,11 @@ package com.floriantoenjes.user;
 
 import com.floriantoenjes.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +20,9 @@ import javax.validation.Valid;
 public class UserController {
     @Autowired
     UserService userService;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @RequestMapping("/signup")
     public String signupForm(Model model) {
@@ -36,6 +43,7 @@ public class UserController {
         }
 
         user.setRole(new Role("ROLE_USER"));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.save(user);
         redirectAttributes.addFlashAttribute("flash", new FlashMessage(String.format("Account %s has been created",
                 user.getUsername()), FlashMessage.Status.SUCCESS));

@@ -39,7 +39,11 @@ public class DatabaseLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         // Create a mock user
-        User user = new User("user", "password", new Role("ROLE_USER"));
+        // Username: user
+        // Password: password
+        User user = new User("user",
+                "$2a$10$AGOk3D.U1cR719pUI4W98eUkEejDWH3/EpCa4vBzp8DE5OaYI9GfO",
+                new Role("ROLE_USER"));
         users.save(user);
 
         // Create some items

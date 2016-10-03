@@ -2,6 +2,7 @@ package com.floriantoenjes.core;
 
 import com.floriantoenjes.ingredient.Ingredient;
 import com.floriantoenjes.item.Item;
+import com.floriantoenjes.item.ItemRepository;
 import com.floriantoenjes.recipe.Category;
 import com.floriantoenjes.recipe.Recipe;
 import com.floriantoenjes.recipe.RecipeRepository;
@@ -25,22 +26,36 @@ public class DatabaseLoader implements ApplicationRunner {
     RecipeRepository recipes;
     UserRepository users;
     RoleRepository roles;
+    ItemRepository items;
 
     @Autowired
-    public DatabaseLoader(RecipeRepository recipes, UserRepository users, RoleRepository roles) {
+    public DatabaseLoader(RecipeRepository recipes, UserRepository users, RoleRepository roles, ItemRepository items) {
         this.recipes = recipes;
         this.users = users;
         this.roles = roles;
+        this.items = items;
     }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Ingredient egg = new Ingredient(new Item("Egg"), "superb", 6);
-        Step step = new Step("Cook and prepare a tasty egg");
+
+        // Create some items
+        items.save(new Item("Tomato"));
+        items.save(new Item("Salad"));
+        items.save(new Item("Potato"));
+
+
+        // Create a recipe
+        Ingredient egg = new Ingredient(new Item("Egg"), "fresh", 2);
+        Ingredient ham = new Ingredient(new Item("Ham"), "fresh", 4);
+        Step step1 = new Step("1. Buy the groceries");
+        Step step2 = new Step("2. Roast the ham");
         Recipe recipe = new Recipe("http://abc.com", "Ham and Eggs", "Tasty",
                 Category.Breakfast, 20, 10);;
         recipe.addIngredient(egg);
-        recipe.addStep(step);
+        recipe.addIngredient(ham);
+        recipe.addStep(step1);
+        recipe.addStep(step2);
         recipes.save(recipe);
 
         User user = new User("user", "password", new Role("ROLE_USER"));

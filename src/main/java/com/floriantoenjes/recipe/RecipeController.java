@@ -172,7 +172,8 @@ public class RecipeController {
     }
 
     @RequestMapping(value = "/recipe/{id}/edit", method = RequestMethod.POST)
-    public String editRecipe(@PathVariable Long id, Recipe recipe, BindingResult result, RedirectAttributes redirectAttributes) {
+    public String editRecipe(@PathVariable Long id, Recipe recipe, BindingResult result,
+                             RedirectAttributes redirectAttributes) {
         recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
         recipe.getSteps().forEach( i -> i.setRecipe(recipe));
 
@@ -192,8 +193,10 @@ public class RecipeController {
     }
 
     @RequestMapping("/recipe/{id}/delete")
-    public String deleteRecipe(@PathVariable Long id) {
+    public String deleteRecipe(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         Recipe recipe = recipeService.findById(id);
+        redirectAttributes.addFlashAttribute("flash", new FlashMessage("Recipe has been deleted",
+                FlashMessage.Status.SUCCESS));
         recipeService.delete(recipe);
         return "redirect:/index";
     }

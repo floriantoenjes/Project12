@@ -50,13 +50,19 @@ public class RecipeController {
 
     @RequestMapping("/index")
     public String listRecipes(@RequestParam(value = "category", required = false) String category,
-                              @RequestParam(value = "q", required = false) String q, Model model) {
+                              @RequestParam(value = "q", required = false) String q, Model model,
+                              RedirectAttributes redirectAttributes) {
         List<Recipe> recipes = recipeService.findAll();
 
         // If there is a query then search the recipes
         if (q != null && !q.isEmpty()) {
             recipes = recipes.stream().filter( recipe -> recipe.getName().toLowerCase().contains(q.toLowerCase()))
                     .collect(Collectors.toList());
+            if (recipes.size() == 0) {
+                redirectAttributes.addFlashAttribute("flash", new FlashMessage("No recipes found",
+                        FlashMessage.Status.FAILED));
+                return "redirect:/index";
+            }
         }
 
         // Else if there is a category given then  filter for category

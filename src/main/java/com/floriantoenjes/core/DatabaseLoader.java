@@ -40,13 +40,15 @@ public class DatabaseLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
         // Create some items
-        items.save(new Item("Tomato"));
+        items.save(new Item("Tomatoes"));
         items.save(new Item("Salad"));
-        items.save(new Item("Potato"));
+        items.save(new Item("Potatoes"));
+        items.save(new Item("Onions"));
+        items.save(new Item("Strawberries"));
 
 
         // Create a recipe
-        Ingredient egg = new Ingredient(new Item("Egg"), "fresh", 2);
+        Ingredient egg = new Ingredient(new Item("Eggs"), "fresh", 2);
         Ingredient ham = new Ingredient(new Item("Ham"), "fresh", 4);
         Step step1 = new Step("1. Buy the groceries");
         Step step2 = new Step("2. Roast the ham");

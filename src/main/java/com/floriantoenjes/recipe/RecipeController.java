@@ -75,7 +75,11 @@ public class RecipeController {
 
         // Else just show all recipes
 
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = userService.findByUsername(
+                SecurityContextHolder
+                        .getContext()
+                        .getAuthentication()
+                        .getName());
         Map<Recipe, Boolean> recipeMap = new HashMap<>();
 
         recipes.forEach(recipe -> {

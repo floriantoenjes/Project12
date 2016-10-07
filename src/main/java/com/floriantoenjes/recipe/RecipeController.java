@@ -174,8 +174,16 @@ public class RecipeController {
     }
 
     @RequestMapping("/recipe/{id}/edit")
-    public String editForm(@PathVariable Long id, Model model) {
+    public String editForm(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Recipe recipe = recipeService.findById(id);
+
+        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        if (!user.equals(recipe.getOwner())) {
+            redirectAttributes.addFlashAttribute("flash", new FlashMessage("You are not allowed to edit this recipe",
+                    FlashMessage.Status.FAILED));
+            return "redirect:/index";
+        }
+
         model.addAttribute("recipe", recipe);
         model.addAttribute("categories", Category.values());
         model.addAttribute("items", itemService.findAll());

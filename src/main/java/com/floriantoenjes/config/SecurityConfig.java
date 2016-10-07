@@ -53,8 +53,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .anyRequest()
                     .hasRole("USER")
                     .and()
-                .httpBasic()
-                    .and()
                 .formLogin()
                     .loginPage("/login")
                     .permitAll()
@@ -64,6 +62,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                     .permitAll()
                     .logoutSuccessUrl("/login")
+                    .and()
+                .httpBasic()
                     .and()
                 .csrf().disable();
     }

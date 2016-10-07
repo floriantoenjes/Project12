@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,7 +47,7 @@ public class RecipeController {
     @Autowired
     UserService userService;
 
-    @Autowired
+    @Resource(name = "localValidatorFactoryBean")
     Validator validator;
 
     @RequestMapping("/index")

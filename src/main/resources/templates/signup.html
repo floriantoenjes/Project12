@@ -14,7 +14,10 @@
 </head>
 
 <body>
-
+  <div th:if="${flash != null}" class="container" id="flash">
+    <i class="right material-icons" data-close="" onclick="hide()">close</i>
+    <div th:classappend="${#strings.toLowerCase(flash.status)}" th:text="${flash.message}" class="flash"></div>
+  </div>
   <nav>
     <a href="signup.html">
       sign-up
@@ -54,7 +57,7 @@
           </div> <div class="clear"></div>
           <div class="prefix-20 grid-60 suffix-20">
             <p>
-              <input placeholder="Password Again" type="password"> </input>
+              <input name="passwordAgain" placeholder="Password Again" type="password"> </input>
             </p>
           </div> <div class="clear"></div>
           <div class="prefix-20 grid-60 suffix-20">
@@ -66,5 +69,7 @@
       </div> <!-- recipes -->
     </div> <!-- grid-100 -->
   </div> <!-- grid-container -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script th:src="@{/js/main.js}"></script>
 </body>
 </html>

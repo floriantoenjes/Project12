@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -35,11 +36,19 @@ public class UserController {
 
     // ToDo: Check if username is already taken
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String signup(@Valid User user, BindingResult result, RedirectAttributes redirectAttributes) {
+    public String signup(@RequestParam("passwordAgain") String passwordAgain,
+                         @Valid User user, BindingResult result, RedirectAttributes redirectAttributes) {
 
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.user", result);
             redirectAttributes.addFlashAttribute("user", user);
+            return "redirect:/signup";
+        }
+
+        if (!passwordAgain.equals(user.getPassword())) {
+            // ToDo: Fix faulty JavaScript behaviour in the template
+            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Please enter the same password twice",
+                    FlashMessage.Status.FAILED));
             return "redirect:/signup";
         }
 

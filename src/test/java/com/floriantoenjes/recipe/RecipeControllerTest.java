@@ -19,6 +19,9 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.not;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Application.class)
 public class RecipeControllerTest {
@@ -38,7 +41,6 @@ public class RecipeControllerTest {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("classpath:/templates/");
         viewResolver.setSuffix(".html");
-
 
         User user = new User("user", "password",
                 new Role("ROLE_USER"));
@@ -188,7 +190,6 @@ public class RecipeControllerTest {
     @Test
     public void recipe_id_edit_post_ShouldUpdateRecipe() throws Exception {
         Recipe recipe = recipeService.findById(1L);
-
         User user = (User) userService.loadUserByUsername("user");
 
         mockMvc.perform(MockMvcRequestBuilders.post("/recipe/1/edit")
@@ -213,9 +214,9 @@ public class RecipeControllerTest {
                 .param("steps[1].version", "0")
                 .param("steps[1].description", "2. Roast the ham")
         ).andExpect(MockMvcResultMatchers.redirectedUrl("/index"));
-
         Recipe updatedRecipe = recipeService.findById(1L);
-        org.hamcrest.MatcherAssert.assertThat(updatedRecipe.getName(), org.hamcrest.Matchers.not(recipe.getName()));
+
+        assertThat(updatedRecipe.getName(), not(recipe.getName()));
     }
 
 }

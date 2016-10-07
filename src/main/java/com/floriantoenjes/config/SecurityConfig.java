@@ -46,10 +46,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 // ToDo: might need some tweaking
                 .authorizeRequests()
-                    .antMatchers("/js/main.js")
-                    .permitAll()
                     .antMatchers("/signup")
                     .not().hasRole("USER")
+                    .antMatchers("/js/main.js")
+                    .permitAll()
                     .anyRequest()
                     .hasRole("USER")
                     .and()

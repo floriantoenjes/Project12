@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" />
     </list>
     <ignored path="Recipe.iws" />
@@ -25,7 +24,7 @@
     <SUITE FILE_PATH="coverage/Recipe$RecipeControllerTest_listRecipes.coverage" NAME="RecipeControllerTest.listRecipes Coverage Results" MODIFIED="1475821254191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.floriantoenjes.recipe.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Recipe$RecipeControllerTest.coverage" NAME="RecipeControllerTest Coverage Results" MODIFIED="1475821612171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Recipe$RecipeControllerTest.coverage" NAME="RecipeControllerTest Coverage Results" MODIFIED="1475823488619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.floriantoenjes.recipe.*</FILTER>
     </SUITE>
   </component>
@@ -63,11 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RecipeControllerTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RecipeControllerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1361">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state relative-caret-position="341">
+              <caret line="100" column="43" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecipeController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RecipeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+            <state relative-caret-position="408">
+              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,7 +123,7 @@
       <file leaf-file-name="DatabaseLoader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/core/DatabaseLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
+            <state relative-caret-position="170">
               <caret line="44" column="77" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="77" />
               <folding />
             </state>
@@ -570,8 +569,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" />
       </list>
     </option>
   </component>
@@ -1084,33 +1083,7 @@
       <recent name="com.floriantoenjes.ingridient" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
-    <configuration default="false" name="RecipeControllerTest.listRecipes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.floriantoenjes.recipe.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Recipe_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.floriantoenjes.recipe" />
-      <option name="MAIN_CLASS_NAME" value="com.floriantoenjes.recipe.RecipeControllerTest" />
-      <option name="METHOD_NAME" value="listRecipes" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.RecipeControllerTest">
     <configuration default="false" name="RecipeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1207,6 +1180,32 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Recipe_main" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="RecipeControllerTest.index_post_ShouldAddNewRecipe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.floriantoenjes.recipe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Recipe_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.floriantoenjes.recipe" />
+      <option name="MAIN_CLASS_NAME" value="com.floriantoenjes.recipe.RecipeControllerTest" />
+      <option name="METHOD_NAME" value="index_post_ShouldAddNewRecipe" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1463,19 +1462,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.listRecipes" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnOneRecipeWithCategory" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnRecipeOnSearch" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Application" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnOneRecipeWithCategory" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnRecipeOnSearch" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Application" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_post_ShouldAddNewRecipe" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Application" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnRecipeOnSearch" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnOneRecipeWithCategory" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.listRecipes" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_post_ShouldAddNewRecipe" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Application" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnRecipeOnSearch" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnOneRecipeWithCategory" />
       </list>
     </recent_temporary>
   </component>
@@ -1492,13 +1491,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1472309004020</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Added user and database loader">
-      <created>1472362429224</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1472362429224</updated>
     </task>
     <task id="LOCAL-00002" summary="Made it REST ready">
       <created>1472364289474</created>
@@ -1836,39 +1828,46 @@
       <option name="project" value="LOCAL" />
       <updated>1475821649411</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="minor fix">
+      <created>1475822140336</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1475822140336</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RecipeControllerTest - 2016.10.07 at 08h 21m 18s.xml">
+    <history-entry file="RecipeControllerTest - 2016.10.07 at 08h 58m 13s.xml">
       <configuration name="RecipeControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest - 2016.10.07 at 08h 22m 03s.xml">
-      <configuration name="RecipeControllerTest" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 48m 48s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest - 2016.10.07 at 08h 26m 57s.xml">
-      <configuration name="RecipeControllerTest" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 49m 31s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest - 2016.10.07 at 08h 32m 46s.xml">
-      <configuration name="RecipeControllerTest" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 50m 36s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_ShouldReturnOneRecipeWithCategory - 2016.10.07 at 08h 24m 43s.xml">
-      <configuration name="RecipeControllerTest.index_ShouldReturnOneRecipeWithCategory" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 54m 41s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_ShouldReturnOneRecipeWithCategory - 2016.10.07 at 08h 25m 21s.xml">
-      <configuration name="RecipeControllerTest.index_ShouldReturnOneRecipeWithCategory" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 54m 48s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_ShouldReturnRecipeOnSearch - 2016.10.07 at 08h 26m 46s.xml">
-      <configuration name="RecipeControllerTest.index_ShouldReturnRecipeOnSearch" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 56m 24s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_listRecipes - 2016.10.07 at 08h 11m 59s.xml">
-      <configuration name="RecipeControllerTest.listRecipes" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 56m 27s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_listRecipes - 2016.10.07 at 08h 18m 10s.xml">
-      <configuration name="RecipeControllerTest.listRecipes" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 56m 35s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_listRecipes - 2016.10.07 at 08h 20m 55s.xml">
-      <configuration name="RecipeControllerTest.listRecipes" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 57m 55s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1893,7 +1892,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31419286" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12473348" sideWeight="0.51184833" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12473348" sideWeight="0.51184833" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1952,7 +1951,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small changes." />
     <MESSAGE value="Fixed adding and editing of recipes." />
     <MESSAGE value="Fixed a bunch of stuff that got entangled" />
     <MESSAGE value="Added the ability to favorite recipes by users." />
@@ -1977,7 +1975,8 @@
     <MESSAGE value="Trying to get a first test to run" />
     <MESSAGE value="First test running" />
     <MESSAGE value="First tests running" />
-    <option name="LAST_COMMIT_MESSAGE" value="First tests running" />
+    <MESSAGE value="minor fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1988,11 +1987,17 @@
           <properties />
           <option name="timeStamp" value="85" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java</url>
+          <line>111</line>
+          <properties />
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="94" />
+      <option name="time" value="95" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -2325,30 +2330,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/core/DatabaseLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="44" column="77" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#305#306#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1361">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2365,8 +2352,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state relative-caret-position="408">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/core/DatabaseLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="44" column="77" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="100" column="43" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

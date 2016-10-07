@@ -8,6 +8,8 @@ import com.github.springtestdbunit.annotation.DatabaseSetup;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,6 +22,10 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Application.class)
@@ -48,10 +54,37 @@ public class RecipeControllerTest {
     }
 
     @Test
-    public void listRecipes() throws Exception {
+    public void index_ShouldReturnIndexTemplate() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/index"))
+                .andExpect(MockMvcResultMatchers.view().name("index"));
+    }
+
+    @Test
+    public void index_ShouldReturnTwoRecipes() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/index"))
         .andExpect(MockMvcResultMatchers.view().name("index"))
-        .andExpect(MockMvcResultMatchers.model().attribute("recipeMap", ));
+        .andExpect(MockMvcResultMatchers.model().attribute("recipeMap", org.hamcrest.collection.IsMapWithSize
+                .aMapWithSize(2)));
     }
+
+    @Test
+    public void index_ShouldReturnRecipeWithCategory() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/index")
+        .param("category", "breakfast"))
+        .andExpect(MockMvcResultMatchers.view().name("index"))
+        .andExpect(MockMvcResultMatchers.model().attribute("recipeMap", org.hamcrest.collection.IsMapWithSize
+                .aMapWithSize(1)));
+    }
+
+    @Test
+    public void index_ShouldReturnRecipeOnSearch() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/index")
+        .param("q", "smoothie"))
+        .andExpect(MockMvcResultMatchers.view().name("index"))
+        .andExpect(MockMvcResultMatchers.model().attribute("recipeMap", org.hamcrest.collection.IsMapWithSize
+                .aMapWithSize(1)));
+    }
+
+
 
 }

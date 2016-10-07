@@ -194,8 +194,7 @@ public class RecipeControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.post("/recipe/1/edit")
                 .with(SecurityMockMvcRequestPostProcessors.user(user))
                 .param("id", "1")
-                .param("version", "")
-                // Empty String here which does not validate
+                .param("version", "0")
                 .param("photo", "http://abc.com")
                 .param("name", "Updated Recipe")
                 .param("description", "A tasty breakfast meal")

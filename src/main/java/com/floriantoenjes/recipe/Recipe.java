@@ -26,9 +26,9 @@ public class Recipe extends BaseEntity {
     private Integer prepTime;
 
     private Integer cookTime;
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.MERGE)
     private List<Ingredient> ingredients;
-    @OneToMany(mappedBy = "recipe",  cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "recipe",  cascade = CascadeType.MERGE)
     private List<Step> steps;
     // Todo: Should this be private?
     public boolean isFavorite;

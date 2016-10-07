@@ -45,7 +45,7 @@ public class RecipeControllerTest {
 
         User user = new User("user", "password",
                 new Role("ROLE_USER"));
-        user.setId(2L);
+        user.setId(1L);
         SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(user, null));
 
         mockMvc = MockMvcBuilders

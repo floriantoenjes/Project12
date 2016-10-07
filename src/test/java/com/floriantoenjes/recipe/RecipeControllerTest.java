@@ -166,6 +166,20 @@ public class RecipeControllerTest {
                 .andExpect(MockMvcResultMatchers.model().attribute("recipe", org.hamcrest.Matchers.any(Recipe.class)));
     }
 
+    @Test
+    public void recipe_id_favorite_ShouldRedirectToDetailPage() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1/favorite"))
+                .andExpect(MockMvcResultMatchers.redirectedUrl("/recipe/1"));
+    }
+
+    @Test
+    public void recipe_id_edit_ShouldReturnEditForm() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1/edit"))
+                .andExpect(MockMvcResultMatchers.view().name("edit"))
+                .andExpect(MockMvcResultMatchers.model().attribute("action", "/recipe/1/edit"))
+                .andExpect(MockMvcResultMatchers.model().attribute("recipe", org.hamcrest.Matchers.any(Recipe.class)));
+    }
+
 
 
 }

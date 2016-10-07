@@ -153,6 +153,7 @@ public class RecipeController {
     }
 
     @RequestMapping("/recipe/{id}/favorite")
+    @Transactional
     public String setFavorite(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());

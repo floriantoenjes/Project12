@@ -20,6 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -217,6 +218,19 @@ public class RecipeControllerTest {
         Recipe updatedRecipe = recipeService.findById(1L);
 
         assertThat(updatedRecipe.getName(), not(recipe.getName()));
+    }
+
+    /* Add a new recipe, take the size, delete it and check the size again*/
+    @Test
+    public void recipe_id_delete_ShouldDeleteRecipe() throws Exception {
+        index_post_ShouldAddNewRecipe();
+        int sizeBefore = recipeService.findAll().size();
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/3/delete"))
+                .andExpect(MockMvcResultMatchers.redirectedUrl("/index"));
+        int sizeAfter = recipeService.findAll().size();
+
+        assertThat(sizeAfter, lessThan(sizeBefore));
     }
 
 }

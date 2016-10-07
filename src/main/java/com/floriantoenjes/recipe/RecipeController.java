@@ -189,6 +189,10 @@ public class RecipeController {
         recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
         recipe.getSteps().forEach( i -> i.setRecipe(recipe));
 
+        // ToDo: If user is not owner do not allow updating
+        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        recipe.setOwner(user);
+
         // Validate the recipe
         validator.validate(recipe, result);
         if (result.hasErrors()) {

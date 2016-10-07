@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeService.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" />
     </list>
     <ignored path="Recipe.iws" />
@@ -57,8 +55,8 @@
       <file leaf-file-name="RecipeControllerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="208" column="42" selection-start-line="208" selection-start-column="42" selection-end-line="208" selection-end-column="42" />
+            <state relative-caret-position="545">
+              <caret line="217" column="34" selection-start-line="217" selection-start-column="34" selection-end-line="217" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1130,7 +1128,7 @@
       <recent name="com.floriantoenjes.ingridient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RecipeControllerTest">
+  <component name="RunManager" selected="JUnit.RecipeControllerTest.recipe_id_edit_post_ShouldUpdateRecipe">
     <configuration default="false" name="All in Recipe_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Recipe_test" />
@@ -1512,8 +1510,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_edit_post_ShouldUpdateRecipe" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_edit_post_ShouldUpdateRecipe" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
         <item index="2" class="java.lang.String" itemvalue="Application.Application" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_post_ShouldAddNewRecipe" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.All in Recipe_test" />
@@ -1533,13 +1531,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1472309004020</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Started implementing ownage of recipes">
-      <created>1473231174347</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1473231174347</updated>
     </task>
     <task id="LOCAL-00013" summary="Continued implementing ownage of recipes">
       <created>1473328048582</created>
@@ -1877,7 +1868,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475828617038</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Error on recipe update test fixed">
+      <created>1475829222585</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1475829222585</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1905,10 +1903,10 @@
     <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 10h 29m 20s.xml">
       <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_recipe_id_edit_post_ShouldUpdateRecipe - 2016.10.07 at 10h 24m 35s.xml">
+    <history-entry file="RecipeControllerTest_recipe_id_edit_post_ShouldUpdateRecipe - 2016.10.07 at 10h 30m 26s.xml">
       <configuration name="RecipeControllerTest.recipe_id_edit_post_ShouldUpdateRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_recipe_id_edit_post_ShouldUpdateRecipe - 2016.10.07 at 10h 30m 26s.xml">
+    <history-entry file="RecipeControllerTest_recipe_id_edit_post_ShouldUpdateRecipe - 2016.10.07 at 10h 37m 53s.xml">
       <configuration name="RecipeControllerTest.recipe_id_edit_post_ShouldUpdateRecipe" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1932,9 +1930,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31419286" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31419286" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12473348" sideWeight="0.51816744" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12473348" sideWeight="0.51816744" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1995,7 +1993,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added FlashMessage and redirecting if result has errors in RecipeController /add route" />
     <MESSAGE value="Minor change." />
     <MESSAGE value="Added user validation." />
     <MESSAGE value="Added flashAttributes and styles for user validation at signup" />
@@ -2020,7 +2017,8 @@
     <MESSAGE value="Implemented equals and hashCode in User class" />
     <MESSAGE value="Minor fix regarding hashCode in User" />
     <MESSAGE value="Error on recipe update test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Error on recipe update test" />
+    <MESSAGE value="Error on recipe update test fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Error on recipe update test fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2429,8 +2427,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="208" column="42" selection-start-line="208" selection-start-column="42" selection-end-line="208" selection-end-column="42" />
+        <state relative-caret-position="545">
+          <caret line="217" column="34" selection-start-line="217" selection-start-column="34" selection-end-line="217" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

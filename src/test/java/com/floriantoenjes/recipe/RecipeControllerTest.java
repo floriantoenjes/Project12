@@ -187,7 +187,7 @@ public class RecipeControllerTest {
 
     @Test
     public void recipe_id_edit_post_ShouldUpdateRecipe() throws Exception {
-//        Recipe recipe = recipeService.findById(1L);
+        Recipe recipe = recipeService.findById(1L);
 
         User user = (User) userService.loadUserByUsername("user");
 
@@ -213,7 +213,9 @@ public class RecipeControllerTest {
                 .param("steps[1].version", "0")
                 .param("steps[1].description", "2. Roast the ham")
         ).andExpect(MockMvcResultMatchers.redirectedUrl("/index"));
-    }
 
+        Recipe updatedRecipe = recipeService.findById(1L);
+        org.hamcrest.MatcherAssert.assertThat(updatedRecipe.getName(), org.hamcrest.Matchers.not(recipe.getName()));
+    }
 
 }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" />
     </list>
     <ignored path="Recipe.iws" />
@@ -24,7 +25,7 @@
     <SUITE FILE_PATH="coverage/Recipe$RecipeControllerTest_listRecipes.coverage" NAME="RecipeControllerTest.listRecipes Coverage Results" MODIFIED="1475821254191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.floriantoenjes.recipe.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Recipe$RecipeControllerTest.coverage" NAME="RecipeControllerTest Coverage Results" MODIFIED="1475823488619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Recipe$RecipeControllerTest.coverage" NAME="RecipeControllerTest Coverage Results" MODIFIED="1475824798798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.floriantoenjes.recipe.*</FILTER>
     </SUITE>
   </component>
@@ -65,8 +66,8 @@
       <file leaf-file-name="RecipeControllerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+            <state relative-caret-position="431">
+              <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +78,8 @@
       <file leaf-file-name="RecipeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+            <state relative-caret-position="737">
+              <caret line="133" column="34" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1083,7 +1084,7 @@
       <recent name="com.floriantoenjes.ingridient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RecipeControllerTest.index_ShouldReturnRecipeWithSearch">
+  <component name="RunManager" selected="JUnit.RecipeControllerTest">
     <configuration default="false" name="RecipeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1110,7 +1111,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="RecipeControllerTest.index_ShouldReturnRecipeOnSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="RecipeControllerTest.add_ShouldReturnNewRecipeForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.floriantoenjes.recipe.*" />
@@ -1122,7 +1123,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.floriantoenjes.recipe" />
       <option name="MAIN_CLASS_NAME" value="com.floriantoenjes.recipe.RecipeControllerTest" />
-      <option name="METHOD_NAME" value="index_ShouldReturnRecipeOnSearch" />
+      <option name="METHOD_NAME" value="add_ShouldReturnNewRecipeForm" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1136,27 +1137,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.floriantoenjes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.floriantoenjes.Application" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Recipe_main" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="RecipeControllerTest.index_post_ShouldAddNewRecipe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="RecipeControllerTest.recipe_id_ShouldReturnRecipeDetailPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.floriantoenjes.recipe.*" />
@@ -1168,7 +1149,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.floriantoenjes.recipe" />
       <option name="MAIN_CLASS_NAME" value="com.floriantoenjes.recipe.RecipeControllerTest" />
-      <option name="METHOD_NAME" value="index_post_ShouldAddNewRecipe" />
+      <option name="METHOD_NAME" value="recipe_id_ShouldReturnRecipeDetailPage" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1182,7 +1163,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="RecipeControllerTest.index_ShouldReturnRecipeWithSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="RecipeControllerTest.index_post_ShouldRedirectOnErrors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.floriantoenjes.recipe.*" />
@@ -1194,7 +1175,33 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.floriantoenjes.recipe" />
       <option name="MAIN_CLASS_NAME" value="com.floriantoenjes.recipe.RecipeControllerTest" />
-      <option name="METHOD_NAME" value="index_ShouldReturnRecipeWithSearch" />
+      <option name="METHOD_NAME" value="index_post_ShouldRedirectOnErrors" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="RecipeControllerTest.index_post_ShouldRedirectOnValidationErrors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.floriantoenjes.recipe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Recipe_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.floriantoenjes.recipe" />
+      <option name="MAIN_CLASS_NAME" value="com.floriantoenjes.recipe.RecipeControllerTest" />
+      <option name="METHOD_NAME" value="index_post_ShouldRedirectOnValidationErrors" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1463,18 +1470,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnRecipeOnSearch" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Application" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_post_ShouldAddNewRecipe" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnRecipeWithSearch" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.add_ShouldReturnNewRecipeForm" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_ShouldReturnRecipeDetailPage" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_post_ShouldRedirectOnErrors" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_post_ShouldRedirectOnValidationErrors" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnRecipeWithSearch" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_post_ShouldAddNewRecipe" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Application" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_ShouldReturnRecipeOnSearch" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_post_ShouldRedirectOnValidationErrors" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.index_post_ShouldRedirectOnErrors" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_ShouldReturnRecipeDetailPage" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.add_ShouldReturnNewRecipeForm" />
       </list>
     </recent_temporary>
   </component>
@@ -1491,13 +1498,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1472309004020</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Implemented templates.">
-      <created>1472376775315</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1472376775315</updated>
     </task>
     <task id="LOCAL-00004" summary="Implemented details page.">
       <created>1472377161887</created>
@@ -1835,39 +1835,46 @@
       <option name="project" value="LOCAL" />
       <updated>1475823516031</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Minor change">
+      <created>1475824041590</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1475824041590</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RecipeControllerTest - 2016.10.07 at 08h 58m 13s.xml">
+    <history-entry file="RecipeControllerTest - 2016.10.07 at 09h 07m 36s.xml">
       <configuration name="RecipeControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_ShouldReturnRecipeWithSearch - 2016.10.07 at 09h 07m 08s.xml">
-      <configuration name="RecipeControllerTest.index_ShouldReturnRecipeWithSearch" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest - 2016.10.07 at 09h 20m 04s.xml">
+      <configuration name="RecipeControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 49m 31s.xml">
-      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_add_ShouldReturnNewRecipeForm - 2016.10.07 at 09h 10m 09s.xml">
+      <configuration name="RecipeControllerTest.add_ShouldReturnNewRecipeForm" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 50m 36s.xml">
-      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_add_ShouldReturnNewRecipeForm - 2016.10.07 at 09h 10m 24s.xml">
+      <configuration name="RecipeControllerTest.add_ShouldReturnNewRecipeForm" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 54m 41s.xml">
-      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldRedirectOnErrors - 2016.10.07 at 09h 17m 15s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldRedirectOnErrors" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 54m 48s.xml">
-      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldRedirectOnErrors - 2016.10.07 at 09h 18m 09s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldRedirectOnErrors" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 56m 24s.xml">
-      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldRedirectOnValidationErrors - 2016.10.07 at 09h 19m 29s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldRedirectOnValidationErrors" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 56m 27s.xml">
-      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_index_post_ShouldRedirectOnValidationErrors - 2016.10.07 at 09h 19m 48s.xml">
+      <configuration name="RecipeControllerTest.index_post_ShouldRedirectOnValidationErrors" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 56m 35s.xml">
-      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_recipe_id_ShouldReturnRecipeDetailPage - 2016.10.07 at 09h 13m 15s.xml">
+      <configuration name="RecipeControllerTest.recipe_id_ShouldReturnRecipeDetailPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_index_post_ShouldAddNewRecipe - 2016.10.07 at 08h 57m 55s.xml">
-      <configuration name="RecipeControllerTest.index_post_ShouldAddNewRecipe" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest_recipe_id_ShouldReturnRecipeDetailPage - 2016.10.07 at 09h 15m 04s.xml">
+      <configuration name="RecipeControllerTest.recipe_id_ShouldReturnRecipeDetailPage" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1890,7 +1897,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31419286" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31419286" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12473348" sideWeight="0.51184833" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1963,7 +1970,6 @@
     <MESSAGE value="Minor change." />
     <MESSAGE value="Added user validation." />
     <MESSAGE value="Added flashAttributes and styles for user validation at signup" />
-    <MESSAGE value="Minor change" />
     <MESSAGE value="Added flash messaging for &quot;add&quot; and &quot;edit&quot; routes" />
     <MESSAGE value="Added functionality to the cancel button" />
     <MESSAGE value="Fixed duplicate items" />
@@ -1976,22 +1982,17 @@
     <MESSAGE value="First tests running" />
     <MESSAGE value="minor fix" />
     <MESSAGE value="Post test working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Post test working" />
+    <MESSAGE value="Minor change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java</url>
-          <line>193</line>
+          <line>194</line>
           <properties />
           <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java</url>
-          <line>111</line>
-          <properties />
-          <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -2360,8 +2361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+        <state relative-caret-position="737">
+          <caret line="133" column="34" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2370,8 +2371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+        <state relative-caret-position="431">
+          <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

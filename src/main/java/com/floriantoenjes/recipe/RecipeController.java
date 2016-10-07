@@ -136,6 +136,7 @@ public class RecipeController {
     }
 
     @RequestMapping("/recipe/{id}")
+    @Transactional
     public String detail(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
         Hibernate.initialize(recipe.getIngredients());

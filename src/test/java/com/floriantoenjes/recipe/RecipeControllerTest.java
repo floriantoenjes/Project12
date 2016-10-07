@@ -7,6 +7,7 @@ import com.floriantoenjes.user.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -70,6 +71,7 @@ public class RecipeControllerTest {
         .andExpect(MockMvcResultMatchers.model().attribute("recipeMap", org.hamcrest.collection.IsMapWithSize
                 .aMapWithSize(1)));
     }
+
     @Test
     public void index_ShouldReturnRecipeWithSearch() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/index")
@@ -110,7 +112,59 @@ public class RecipeControllerTest {
 
     }
 
+    @Test
+    public void index_post_ShouldRedirectOnValidationErrors() throws Exception {
+        User user = (User) userService.loadUserByUsername("user");
 
+        mockMvc.perform(MockMvcRequestBuilders.post("/index")
+                .with(SecurityMockMvcRequestPostProcessors.user(user))
+        .param("id", "")
+        .param("version", "")
+        // Empty String here which does not validate
+        .param("photo", "")
+        .param("name", "Recipe")
+        .param("description", "Description of a recipe")
+        .param("category", "Breakfast")
+        .param("prepTime", "15")
+        .param("cookTime", "5")
+        .param("ingredients[0].id", "")
+        .param("ingredients[0].version", "")
+        .param("ingredients[0].item", "1")
+        .param("ingredients[0].condition", "fresh")
+        .param("ingredients[0].quantity", "3")
+        .param("steps[0].id", "")
+        .param("steps[0].version", "")
+        .param("steps[0].description", "New step")
+        ).andExpect(MockMvcResultMatchers.redirectedUrl("/add"));
+
+    }
+
+    @Test
+    public void index_post_ShouldRedirectOnErrors() throws Exception {
+        User user = (User) userService.loadUserByUsername("user");
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/index")
+                .with(SecurityMockMvcRequestPostProcessors.user(user))
+        // Missing parameters here
+        .param("id", "")
+        .param("version", "")
+        ).andExpect(MockMvcResultMatchers.redirectedUrl("/add"));
+
+    }
+
+    @Test
+    public void add_ShouldReturnNewRecipeForm() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/add"))
+                .andExpect(MockMvcResultMatchers.view().name("edit"))
+                .andExpect(MockMvcResultMatchers.model().attribute("action", "/index"));
+    }
+
+    @Test
+    public void recipe_id_ShouldReturnRecipeDetailPage() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1"))
+                .andExpect(MockMvcResultMatchers.view().name("detail"))
+                .andExpect(MockMvcResultMatchers.model().attribute("recipe", org.hamcrest.Matchers.any(Recipe.class)));
+    }
 
 
 

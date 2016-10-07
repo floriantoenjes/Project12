@@ -173,7 +173,10 @@ public class RecipeControllerTest {
 
     @Test
     public void recipe_id_edit_ShouldReturnEditForm() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1/edit"))
+        User user = (User) userService.loadUserByUsername("user");
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1/edit")
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
                 .andExpect(MockMvcResultMatchers.view().name("edit"))
                 .andExpect(MockMvcResultMatchers.model().attribute("action", "/recipe/1/edit"))
                 .andExpect(MockMvcResultMatchers.model().attribute("recipe", org.hamcrest.Matchers.any(Recipe.class)));

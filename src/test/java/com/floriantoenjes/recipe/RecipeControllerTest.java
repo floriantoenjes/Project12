@@ -70,6 +70,14 @@ public class RecipeControllerTest {
         .andExpect(MockMvcResultMatchers.model().attribute("recipeMap", org.hamcrest.collection.IsMapWithSize
                 .aMapWithSize(1)));
     }
+    @Test
+    public void index_ShouldReturnRecipeWithSearch() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/index")
+        .param("q", "smoothie"))
+        .andExpect(MockMvcResultMatchers.view().name("index"))
+        .andExpect(MockMvcResultMatchers.model().attribute("recipeMap", org.hamcrest.collection.IsMapWithSize
+                .aMapWithSize(1)));
+    }
 
     @Test
     public void index_post_ShouldAddNewRecipe() throws Exception {

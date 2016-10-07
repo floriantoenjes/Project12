@@ -67,6 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private AuthenticationFailureHandler loginFailureHandler() {
+        // ToDo: Perhaps redirect to another route and add flash messaging
         return (request, response, exception) -> {
             response.sendRedirect("/login");
         };

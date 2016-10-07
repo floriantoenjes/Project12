@@ -67,8 +67,8 @@
       <file leaf-file-name="SecurityConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/config/SecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+            <state relative-caret-position="282">
+              <caret line="69" column="74" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -1501,13 +1501,6 @@
       <option name="presentableId" value="Default" />
       <updated>1472309004020</updated>
     </task>
-    <task id="LOCAL-00018" summary="Updating recipes is now possible">
-      <created>1473438284489</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1473438284489</updated>
-    </task>
     <task id="LOCAL-00019" summary="Different binding of ingredients">
       <created>1473493561663</created>
       <option name="number" value="00019" />
@@ -1844,7 +1837,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475832693519</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Fixed the JavaScript for sign up">
+      <created>1475833256215</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1475833256215</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1962,7 +1962,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed duplicate items" />
     <MESSAGE value="Minor changes" />
     <MESSAGE value="Added another mock recipe" />
     <MESSAGE value="Added a flash message for deletion" />
@@ -1987,7 +1986,8 @@
     <MESSAGE value="The same password has to be entered twice now" />
     <MESSAGE value="Added test for recipe deletion" />
     <MESSAGE value="Minor change user id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor change user id" />
+    <MESSAGE value="Fixed the JavaScript for sign up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the JavaScript for sign up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2401,8 +2401,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/config/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        <state relative-caret-position="282">
+          <caret line="69" column="74" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
           <folding />
         </state>
       </provider>

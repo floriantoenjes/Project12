@@ -44,9 +44,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                // ToDo: might need some tweaking
                 .authorizeRequests()
+                    .antMatchers("/js/main.js")
+                    .permitAll()
                     .antMatchers("/signup")
-//                    .permitAll()
                     .not().hasRole("USER")
                     .anyRequest()
                     .hasRole("USER")

@@ -30,6 +30,9 @@ public class RecipeControllerTest {
     @Autowired
     UserService userService;
 
+    @Autowired
+    RecipeService recipeService;
+
     @Before
     public void setUp() throws Exception {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -182,6 +185,33 @@ public class RecipeControllerTest {
                 .andExpect(MockMvcResultMatchers.model().attribute("recipe", org.hamcrest.Matchers.any(Recipe.class)));
     }
 
+    @Test
+    public void recipe_id_edit_post_ShouldUpdateRecipe() throws Exception {
+        Recipe recipe = recipeService.findById(1L);
+
+        User user = (User) userService.loadUserByUsername("user");
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/recipe/1/edit")
+                .with(SecurityMockMvcRequestPostProcessors.user(user))
+                .param("id", "")
+                .param("version", "")
+                // Empty String here which does not validate
+                .param("photo", "")
+                .param("name", "Recipe")
+                .param("description", "Description of a recipe")
+                .param("category", "Breakfast")
+                .param("prepTime", "15")
+                .param("cookTime", "5")
+                .param("ingredients[0].id", "")
+                .param("ingredients[0].version", "")
+                .param("ingredients[0].item", "1")
+                .param("ingredients[0].condition", "fresh")
+                .param("ingredients[0].quantity", "3")
+                .param("steps[0].id", "")
+                .param("steps[0].version", "")
+                .param("steps[0].description", "New step")
+        ).andExpect(MockMvcResultMatchers.redirectedUrl("/add"));
+    }
 
 
 }

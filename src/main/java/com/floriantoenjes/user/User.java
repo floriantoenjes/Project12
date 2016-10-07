@@ -130,12 +130,12 @@ public class User extends BaseEntity implements UserDetails {
 
         User user = (User) o;
 
-        return username.equals(user.username);
+        return username != null ? username.equals(user.username) : user.username == null;
 
     }
 
     @Override
     public int hashCode() {
-        return username.hashCode();
+        return username != null ? username.hashCode() : 0;
     }
 }

@@ -187,30 +187,33 @@ public class RecipeControllerTest {
 
     @Test
     public void recipe_id_edit_post_ShouldUpdateRecipe() throws Exception {
-        Recipe recipe = recipeService.findById(1L);
+//        Recipe recipe = recipeService.findById(1L);
 
         User user = (User) userService.loadUserByUsername("user");
 
         mockMvc.perform(MockMvcRequestBuilders.post("/recipe/1/edit")
                 .with(SecurityMockMvcRequestPostProcessors.user(user))
-                .param("id", "")
+                .param("id", "1")
                 .param("version", "")
                 // Empty String here which does not validate
-                .param("photo", "")
-                .param("name", "Recipe")
-                .param("description", "Description of a recipe")
+                .param("photo", "http://abc.com")
+                .param("name", "Updated Recipe")
+                .param("description", "A tasty breakfast meal")
                 .param("category", "Breakfast")
-                .param("prepTime", "15")
-                .param("cookTime", "5")
-                .param("ingredients[0].id", "")
-                .param("ingredients[0].version", "")
-                .param("ingredients[0].item", "1")
+                .param("prepTime", "20")
+                .param("cookTime", "10")
+                .param("ingredients[0].id", "1")
+                .param("ingredients[0].version", "0")
+                .param("ingredients[0].item", "6")
                 .param("ingredients[0].condition", "fresh")
-                .param("ingredients[0].quantity", "3")
-                .param("steps[0].id", "")
-                .param("steps[0].version", "")
-                .param("steps[0].description", "New step")
-        ).andExpect(MockMvcResultMatchers.redirectedUrl("/add"));
+                .param("ingredients[0].quantity", "2")
+                .param("steps[0].id", "1")
+                .param("steps[0].version", "0")
+                .param("steps[0].description", "1. Buy the groceries")
+                .param("steps[1].id", "2")
+                .param("steps[1].version", "0")
+                .param("steps[1].description", "2. Roast the ham")
+        ).andExpect(MockMvcResultMatchers.redirectedUrl("/index"));
     }
 
 

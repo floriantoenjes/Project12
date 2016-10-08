@@ -18,6 +18,7 @@ import java.util.List;
 
 @Entity
 public class User extends BaseEntity implements UserDetails {
+
     @Size(min = 4, max = 20)
     private String username;
 

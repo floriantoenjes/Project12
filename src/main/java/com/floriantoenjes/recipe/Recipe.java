@@ -16,24 +16,31 @@ public class Recipe extends BaseEntity {
 
     @Size(min = 3, max = 250)
     private String photo;
+
     @Size(min = 3, max = 40)
     private String name;
+
     @Size(min = 5, max = 250)
     private String description;
+
     @NotNull
     private Category category;
+
     @NotNull(message = "has to have a prep time")
     private Integer prepTime;
 
     private Integer cookTime;
+
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     private List<Ingredient> ingredients;
+
     @OneToMany(mappedBy = "recipe",  cascade = CascadeType.ALL)
     private List<Step> steps;
 
     @ManyToOne
     @NotNull
     private User owner;
+
     @ManyToMany
     private List<User> usersFavorited;
 

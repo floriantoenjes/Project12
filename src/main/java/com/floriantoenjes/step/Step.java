@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Step extends BaseEntity {
     private String description;
+
     @ManyToOne
     private Recipe recipe;
 

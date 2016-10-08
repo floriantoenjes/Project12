@@ -1,5 +1,6 @@
 package com.floriantoenjes.recipe;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.floriantoenjes.core.BaseEntity;
 import com.floriantoenjes.ingredient.Ingredient;
 import com.floriantoenjes.step.Step;
@@ -39,9 +40,11 @@ public class Recipe extends BaseEntity {
 
     @ManyToOne
     @NotNull
+    @JsonIgnore
     private User owner;
 
     @ManyToMany
+    @JsonIgnore
     private List<User> usersFavorited;
 
     public Recipe() {

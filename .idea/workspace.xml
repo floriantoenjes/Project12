@@ -4,7 +4,7 @@
     <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/step/Step.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/step/Step.java" />
     </list>
     <ignored path="Recipe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,23 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Recipe.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Recipe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1261">
-              <caret line="135" column="44" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="44" />
+            <state relative-caret-position="612">
+              <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -89,8 +77,8 @@
       <file leaf-file-name="Step.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/step/Step.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="119">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+            <state relative-caret-position="34">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -567,7 +555,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/step/StepRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/ingredient/IngredientRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/step/StepService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/step/Step.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/ingredient/IngredientService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/web/controller/RecipeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Category.java" />
@@ -609,6 +596,7 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/floriantoenjes/step/Step.java" />
       </list>
     </option>
   </component>
@@ -730,6 +718,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="floriantoenjes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Recipe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project 12 - Recipe Site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="floriantoenjes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1268,13 +1286,6 @@
       <option name="presentableId" value="Default" />
       <updated>1472309004020</updated>
     </task>
-    <task id="LOCAL-00025" summary="Added the ability to favorite recipes by users.">
-      <created>1474306318185</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1474306318185</updated>
-    </task>
     <task id="LOCAL-00026" summary="Added favorite listing on index page.">
       <created>1474347852171</created>
       <option name="number" value="00026" />
@@ -1611,7 +1622,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475911051792</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Changed the mapping for owner of a recipe.">
+      <created>1475911292386</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1475911292386</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1729,7 +1747,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First tests running" />
     <MESSAGE value="minor fix" />
     <MESSAGE value="Post test working" />
     <MESSAGE value="Minor change" />
@@ -1754,7 +1771,8 @@
     <MESSAGE value="Threw out the CasCadeType.merge" />
     <MESSAGE value="Removed the useless isFavorite field." />
     <MESSAGE value="Changede the code structure." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changede the code structure." />
+    <MESSAGE value="Changed the mapping for owner of a recipe." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the mapping for owner of a recipe." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2051,14 +2069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -2129,10 +2139,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/ingredient/Ingredient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        <state relative-caret-position="357">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -2145,26 +2163,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/ingredient/Ingredient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="612">
+          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/step/Step.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1261">
-          <caret line="135" column="44" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="44" />
+        <state relative-caret-position="34">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding />
         </state>
       </provider>

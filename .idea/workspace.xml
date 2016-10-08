@@ -73,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Recipe.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Recipe.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="28" column="62" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+            <state relative-caret-position="408">
+              <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -115,7 +115,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -128,8 +128,8 @@
       <file leaf-file-name="DatabaseLoader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/core/DatabaseLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255">
-              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+            <state relative-caret-position="408">
+              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -663,6 +663,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -779,7 +783,7 @@
       <recent name="com.floriantoenjes.ingridient" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="JUnit.All in Recipe_test">
     <configuration default="false" name="All in Recipe_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Recipe_test" />
@@ -1161,8 +1165,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Application" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in Recipe_test" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in Recipe_test" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Application" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_delete_ShouldDeleteRecipe" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_edit_post_ShouldUpdateRecipe" />
@@ -1182,13 +1186,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1472309004020</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Small changes.">
-      <created>1473746005612</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1473746005612</updated>
     </task>
     <task id="LOCAL-00023" summary="Fixed adding and editing of recipes.">
       <created>1474280757265</created>
@@ -1526,16 +1523,17 @@
       <option name="project" value="LOCAL" />
       <updated>1475910378838</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Threw out the CasCadeType.merge">
+      <created>1475910632052</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1475910632052</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Recipe_test - 2016.10.07 at 11h 24m 15s.xml">
-      <configuration name="All in Recipe_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Recipe_test - 2016.10.07 at 11h 26m 09s.xml">
-      <configuration name="All in Recipe_test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_Recipe_test - 2016.10.07 at 11h 27m 15s.xml">
       <configuration name="All in Recipe_test" configurationId="JUnit" />
     </history-entry>
@@ -1543,6 +1541,12 @@
       <configuration name="All in Recipe_test" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_in_Recipe_test - 2016.10.07 at 14h 20m 35s.xml">
+      <configuration name="All in Recipe_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Recipe_test - 2016.10.08 at 09h 12m 34s.xml">
+      <configuration name="All in Recipe_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Recipe_test - 2016.10.08 at 09h 14m 52s.xml">
       <configuration name="All in Recipe_test" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RecipeControllerTest - 2016.10.07 at 11h 31m 18s.xml">
@@ -1581,7 +1585,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.312026" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.312026" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32502708" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1644,7 +1648,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit for testing" />
     <MESSAGE value="Trying to get a first test to run" />
     <MESSAGE value="First test running" />
     <MESSAGE value="First tests running" />
@@ -1669,7 +1672,8 @@
     <MESSAGE value="Stopped exporting Roles" />
     <MESSAGE value="Minor change regarding http basic authentication" />
     <MESSAGE value="Able to look at the database now." />
-    <option name="LAST_COMMIT_MESSAGE" value="Able to look at the database now." />
+    <MESSAGE value="Threw out the CasCadeType.merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Threw out the CasCadeType.merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2058,26 +2062,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="62" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+        <state relative-caret-position="187">
+          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/core/DatabaseLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        <state relative-caret-position="408">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        <state relative-caret-position="408">
+          <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
           <folding />
         </state>
       </provider>

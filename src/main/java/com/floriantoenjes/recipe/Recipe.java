@@ -30,8 +30,7 @@ public class Recipe extends BaseEntity {
     private List<Ingredient> ingredients;
     @OneToMany(mappedBy = "recipe",  cascade = CascadeType.ALL)
     private List<Step> steps;
-    // Todo: Should this be private?
-    public boolean isFavorite;
+
     @ManyToOne
     @NotNull
     private User owner;
@@ -119,13 +118,6 @@ public class Recipe extends BaseEntity {
         steps.add(step);
     }
 
-    public boolean isFavorite() {
-        return isFavorite;
-    }
-
-    public void setFavorite(boolean favorite) {
-        isFavorite = favorite;
-    }
 
     public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;

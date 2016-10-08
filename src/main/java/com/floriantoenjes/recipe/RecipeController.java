@@ -83,7 +83,7 @@ public class RecipeController {
                         .getContext()
                         .getAuthentication()
                         .getName());
-        Map<Recipe, Boolean> recipeMap = new HashMap<>();
+        Map<Recipe, Boolean> recipeMap = new TreeMap<>();
 
         recipes.forEach(recipe -> {
             Hibernate.initialize(recipe.getUsersFavorited());

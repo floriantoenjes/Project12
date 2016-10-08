@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Recipe extends BaseEntity {
+public class Recipe extends BaseEntity implements Comparable<Recipe>{
 
     @Size(min = 3, max = 250)
     private String photo;
@@ -174,6 +174,11 @@ public class Recipe extends BaseEntity {
 
     public void removeUserFavorited(User user) {
         usersFavorited.remove(user);
+    }
+
+    @Override
+    public int compareTo(Recipe o) {
+        return -this.description.compareTo(o.description);
     }
 }
 

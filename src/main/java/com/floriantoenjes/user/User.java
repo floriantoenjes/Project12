@@ -2,6 +2,7 @@ package com.floriantoenjes.user;
 
 import com.floriantoenjes.core.BaseEntity;
 import com.floriantoenjes.recipe.Recipe;
+import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,10 +27,10 @@ public class User extends BaseEntity implements UserDetails {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Role role;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "owner")
     private List<Recipe> recipes;
 
-    @ManyToMany(mappedBy = "usersFavorited",cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "usersFavorited", cascade = CascadeType.ALL)
     private List<Recipe> favorites;
 
     public User(){}

@@ -39,11 +39,18 @@ public class Recipe extends BaseEntity {
     private List<Step> steps;
 
     @ManyToOne
+    @JoinColumn(name = "owner_id")
     @NotNull
     @JsonIgnore
     private User owner;
 
     @ManyToMany
+    @JoinTable(name="USERS_FAVORITE_RECIPES",
+            joinColumns=
+            @JoinColumn(name="RECIPE_ID", referencedColumnName="ID"),
+            inverseJoinColumns=
+            @JoinColumn(name="USER_ID", referencedColumnName="ID")
+    )
     @JsonIgnore
     private List<User> usersFavorited;
 

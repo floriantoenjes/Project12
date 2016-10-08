@@ -29,7 +29,7 @@ public class User extends BaseEntity implements UserDetails {
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<Recipe> recipes;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "usersFavorited",cascade = CascadeType.ALL)
     private List<Recipe> favorites;
 
     public User(){}

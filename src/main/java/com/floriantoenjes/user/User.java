@@ -26,7 +26,7 @@ public class User extends BaseEntity implements UserDetails {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Role role;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<Recipe> recipes;
 
     @ManyToMany(cascade = CascadeType.ALL)

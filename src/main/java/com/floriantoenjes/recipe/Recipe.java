@@ -145,6 +145,7 @@ public class Recipe extends BaseEntity {
     }
 
     public void setOwner(User owner) {
+        //ToDo: Why is this still here?
 //        owner.addRecipe(this);
         this.owner = owner;
     }

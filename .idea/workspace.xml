@@ -81,8 +81,8 @@
       <file leaf-file-name="edit.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+            <state relative-caret-position="391">
+              <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -1112,13 +1112,6 @@
       <option name="presentableId" value="Default" />
       <updated>1472309004020</updated>
     </task>
-    <task id="LOCAL-00022" summary="Small changes.">
-      <created>1473746005612</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1473746005612</updated>
-    </task>
     <task id="LOCAL-00023" summary="Fixed adding and editing of recipes.">
       <created>1474280757265</created>
       <option name="number" value="00023" />
@@ -1455,7 +1448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475997894763</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Fixed a link in edit template">
+      <created>1476002433982</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1476002433982</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1573,7 +1573,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added another mock recipe" />
     <MESSAGE value="Added a flash message for deletion" />
     <MESSAGE value="Initial commit for testing" />
     <MESSAGE value="Trying to get a first test to run" />
@@ -1598,7 +1597,8 @@
     <MESSAGE value="Fixed the JavaScript for sign up" />
     <MESSAGE value="Can't signup with a taken username anymore" />
     <MESSAGE value="Minor change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor change" />
+    <MESSAGE value="Fixed a link in edit template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a link in edit template" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1981,8 +1981,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+        <state relative-caret-position="391">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
           <folding />
         </state>
       </provider>

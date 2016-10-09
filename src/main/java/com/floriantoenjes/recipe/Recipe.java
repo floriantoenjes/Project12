@@ -40,7 +40,7 @@ public class Recipe extends BaseEntity implements Comparable<Recipe>{
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
-    @NotNull
+//    @NotNull
     @JsonIgnore
     private User owner;
 

@@ -153,7 +153,7 @@ public class RecipeController {
     }
 
 
-    //ToDo test setting of favorite
+    //ToDo: Test setting as favorite
     @RequestMapping("/recipe/{id}/favorite")
     @Transactional
     public String setFavorite(@PathVariable Long id, Model model) {

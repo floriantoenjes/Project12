@@ -1,4 +1,4 @@
-java -cp .\h2-1.4.192.jar org.h2.tools.Server
+# Project 12 - Recipe Site
 
 The database server has to be started before using the application or running tests, use 
 "java -cp .\h2-1.4.192.jar org.h2.tools.Server"

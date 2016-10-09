@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="">
+    <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="Added new test for setting a favorite">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java" />
     </list>
@@ -77,8 +77,8 @@
       <file leaf-file-name="RecipeControllerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="187" column="74" selection-start-line="187" selection-start-column="74" selection-end-line="187" selection-end-column="74" />
+            <state relative-caret-position="85">
+              <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -89,6 +89,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
               <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/web/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -715,6 +735,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Recipe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project 12 - Recipe Site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="floriantoenjes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="validator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -998,7 +1048,7 @@
       <recent name="com.floriantoenjes.ingridient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Recipe_test (2)">
+  <component name="RunManager" selected="JUnit.RecipeControllerTest">
     <configuration default="false" name="All in Recipe_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Recipe_test" />
@@ -1040,27 +1090,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="All in Recipe_test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Recipe_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="RecipeControllerTest.recipe_id_favorite_ShouldSetRecipeAsFavorite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1096,6 +1125,32 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="RecipeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.floriantoenjes.recipe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Recipe_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.floriantoenjes.recipe" />
+      <option name="MAIN_CLASS_NAME" value="com.floriantoenjes.recipe.RecipeControllerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -1364,17 +1419,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in Recipe_test" />
       <item index="1" class="java.lang.String" itemvalue="Application.Application" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.All in Recipe_test (1)" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_favorite_ShouldSetRecipeAsFavorite" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.All in Recipe_test (2)" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_favorite_ShouldSetRecipeAsFavorite" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in Recipe_test (2)" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in Recipe_test (2)" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_favorite_ShouldSetRecipeAsFavorite" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.All in Recipe_test" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Application" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.All in Recipe_test (1)" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Application" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in Recipe_test (2)" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RecipeControllerTest.recipe_id_favorite_ShouldSetRecipeAsFavorite" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.All in Recipe_test" />
       </list>
     </recent_temporary>
   </component>
@@ -1391,13 +1446,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1472309004020</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Minor change">
-      <created>1475397821567</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1475397821567</updated>
     </task>
     <task id="LOCAL-00037" summary="Added flashAttributes and styles for user validation at signup">
       <created>1475478300169</created>
@@ -1735,18 +1783,25 @@
       <option name="project" value="LOCAL" />
       <updated>1475995182347</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Added new test for setting a favorite">
+      <created>1475995774750</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1475995774750</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TestHistory">
     <history-entry file="All_in_Recipe_test_(2) - 2016.10.09 at 08h 49m 13s.xml">
       <configuration name="All in Recipe_test (2)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_recipe_id_delete_ShouldDeleteRecipe - 2016.10.07 at 11h 26m 00s.xml">
-      <configuration name="RecipeControllerTest.recipe_id_delete_ShouldDeleteRecipe" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest - 2016.10.09 at 08h 50m 50s.xml">
+      <configuration name="RecipeControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RecipeControllerTest_recipe_id_favorite_ShouldSetRecipeAsFavorite - 2016.10.09 at 08h 43m 22s.xml">
-      <configuration name="RecipeControllerTest.recipe_id_favorite_ShouldSetRecipeAsFavorite" configurationId="JUnit" />
+    <history-entry file="RecipeControllerTest - 2016.10.09 at 08h 55m 28s.xml">
+      <configuration name="RecipeControllerTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RecipeControllerTest_recipe_id_favorite_ShouldSetRecipeAsFavorite - 2016.10.09 at 08h 43m 48s.xml">
       <configuration name="RecipeControllerTest.recipe_id_favorite_ShouldSetRecipeAsFavorite" configurationId="JUnit" />
@@ -1790,7 +1845,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30985916" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30985916" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12473348" sideWeight="0.53061223" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32502708" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1853,7 +1908,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Error on recipe update test" />
     <MESSAGE value="Error on recipe update test fixed" />
     <MESSAGE value="Recipe update test working" />
     <MESSAGE value="Checked a todo" />
@@ -1878,14 +1932,15 @@
     <MESSAGE value="Creating a recipe via REST working now" />
     <MESSAGE value="Deletion of items, ingredients and steps via REST is prevented now" />
     <MESSAGE value="Minor change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor change" />
+    <MESSAGE value="Added new test for setting a favorite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new test for setting a favorite" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="110" />
+      <option name="time" value="111" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -2018,10 +2073,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/web/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/floriantoenjes/recipe/RecipeControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="187" column="74" selection-start-line="187" selection-start-column="74" selection-end-line="187" selection-end-column="74" />
+        <state relative-caret-position="85">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
           <folding />
         </state>
       </provider>

@@ -4,6 +4,7 @@ import com.floriantoenjes.Application;
 import com.floriantoenjes.user.Role;
 import com.floriantoenjes.user.User;
 import com.floriantoenjes.user.UserService;
+import org.hibernate.Hibernate;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,11 +18,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.lessThan;
-import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Application.class)
@@ -175,6 +176,21 @@ public class RecipeControllerTest {
     public void recipe_id_favorite_ShouldRedirectToDetailPage() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1/favorite"))
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/recipe/1"));
+    }
+
+    @Test
+    @Transactional
+    public void recipe_id_favorite_ShouldSetRecipeAsFavorite() throws Exception {
+        Recipe recipeBefore = recipeService.findById(1L);
+        Hibernate.initialize(recipeBefore.getUsersFavorited());
+        int favoritesBefore = recipeBefore.getUsersFavorited().size();
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1/favorite"));
+
+        Recipe recipeAfter = recipeService.findById(1L);
+        Hibernate.initialize(recipeAfter.getUsersFavorited());
+        int favoritesAfter = recipeAfter.getUsersFavorited().size();
+        assertThat(favoritesAfter, greaterThan(favoritesBefore));
     }
 
     @Test

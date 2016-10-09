@@ -33,7 +33,6 @@ public class UserController {
         return "signup";
     }
 
-    // ToDo: Check if username is already taken
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String signup(@RequestParam("passwordAgain") String passwordAgain,
                          @Valid User user, BindingResult result, RedirectAttributes redirectAttributes) {

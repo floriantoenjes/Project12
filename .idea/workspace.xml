@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="Fixed the JavaScript for sign up">
+    <list default="true" id="e15b0bad-853d-4627-8947-cecdfb94d43b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/config/RestConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/config/RestConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/config/SecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/item/Item.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/item/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/Recipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/recipe/RecipeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/Role.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/Role.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserController.java" />
     </list>
     <ignored path="Recipe.iws" />
@@ -61,8 +55,8 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+            <state relative-caret-position="85">
+              <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -1369,13 +1363,6 @@
       <option name="presentableId" value="Default" />
       <updated>1472309004020</updated>
     </task>
-    <task id="LOCAL-00019" summary="Different binding of ingredients">
-      <created>1473493561663</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1473493561663</updated>
-    </task>
     <task id="LOCAL-00020" summary="Made editing work.">
       <created>1473684229315</created>
       <option name="number" value="00020" />
@@ -1712,7 +1699,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475833256215</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Can't signup with a taken username anymore">
+      <created>1475997771450</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1475997771450</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1830,7 +1824,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Minor changes" />
     <MESSAGE value="Added another mock recipe" />
     <MESSAGE value="Added a flash message for deletion" />
     <MESSAGE value="Initial commit for testing" />
@@ -1855,7 +1848,8 @@
     <MESSAGE value="Added test for recipe deletion" />
     <MESSAGE value="Minor change user id" />
     <MESSAGE value="Fixed the JavaScript for sign up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the JavaScript for sign up" />
+    <MESSAGE value="Can't signup with a taken username anymore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can't signup with a taken username anymore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2254,8 +2248,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/floriantoenjes/user/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+        <state relative-caret-position="85">
+          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
           <folding />
         </state>
       </provider>

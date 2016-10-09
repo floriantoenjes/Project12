@@ -29,7 +29,6 @@ public class UserController {
     public String signupForm(Model model) {
         if (!model.containsAttribute("user")) {
             model.addAttribute("user", new User());
-
         }
         return "signup";
     }

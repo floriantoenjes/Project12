@@ -45,8 +45,13 @@ public class UserController {
         }
 
         if (!passwordAgain.equals(user.getPassword())) {
-            // ToDo: Fix faulty JavaScript behaviour in the template
             redirectAttributes.addFlashAttribute("flash", new FlashMessage("Please enter the same password twice",
+                    FlashMessage.Status.FAILED));
+            return "redirect:/signup";
+        }
+
+        if (userService.findByUsername(user.getUsername()) != null) {
+            redirectAttributes.addFlashAttribute("flash", new FlashMessage("This username has already been taken",
                     FlashMessage.Status.FAILED));
             return "redirect:/signup";
         }

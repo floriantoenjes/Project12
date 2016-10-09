@@ -8,6 +8,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Role extends BaseEntity {
     private String name;
+
     @OneToOne
     User user;
 

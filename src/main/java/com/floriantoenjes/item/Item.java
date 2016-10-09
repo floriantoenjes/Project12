@@ -9,9 +9,9 @@ import javax.persistence.OneToOne;
 @Entity
 public class Item extends BaseEntity{
     private String name;
+
     @OneToOne
     private Ingredient ingredient;
-
 
     public Item() {
     }

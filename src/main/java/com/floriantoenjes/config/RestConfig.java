@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 @Configuration
 public class RestConfig extends RepositoryRestConfigurerAdapter {
-//    @Autowired
+
     @Resource(name = "localValidatorFactoryBean")
     @Lazy
     private Validator validator;

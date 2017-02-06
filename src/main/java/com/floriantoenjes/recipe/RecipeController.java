@@ -77,7 +77,6 @@ public class RecipeController {
         }
 
         // Else just show all recipes
-
         User user = userService.findByUsername(
                 SecurityContextHolder
                         .getContext()

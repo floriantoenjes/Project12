@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
 
-   @Override
+    @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/images/**").antMatchers("/css/**");
 }

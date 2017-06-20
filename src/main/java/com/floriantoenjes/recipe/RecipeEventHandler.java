@@ -25,17 +25,15 @@ public class RecipeEventHandler {
         recipe.setOwner(user);
     }
 
-    private User getUser() {
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        return users.findByUsername(username);
-    }
-
     @HandleBeforeSave
     public void addLastModifiedAsLoggedInUser(Recipe recipe) {
         User user = getUser();
         recipe.setOwner(user);
     }
 
-
+    private User getUser() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        return users.findByUsername(username);
+    }
 }
 

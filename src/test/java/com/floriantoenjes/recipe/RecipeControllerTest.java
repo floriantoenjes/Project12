@@ -125,7 +125,6 @@ public class RecipeControllerTest {
                 .with(SecurityMockMvcRequestPostProcessors.user(user))
         .param("id", "")
         .param("version", "")
-        // Empty String here which does not validate
         .param("photo", "")
         .param("name", "Recipe")
         .param("description", "Description of a recipe")
@@ -150,7 +149,6 @@ public class RecipeControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/index")
                 .with(SecurityMockMvcRequestPostProcessors.user(user))
-        // Missing parameters here
         .param("id", "")
         .param("version", "")
         ).andExpect(MockMvcResultMatchers.redirectedUrl("/add"));

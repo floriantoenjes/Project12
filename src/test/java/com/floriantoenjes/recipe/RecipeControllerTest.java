@@ -233,7 +233,6 @@ public class RecipeControllerTest {
         assertThat(updatedRecipe.getName(), not(recipe.getName()));
     }
 
-    /* Add a new recipe, take the size, delete it and check the size again*/
     @Test
     public void recipe_id_delete_ShouldDeleteRecipe() throws Exception {
         index_post_ShouldAddNewRecipe();

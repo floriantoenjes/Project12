@@ -29,25 +29,25 @@ import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 @Controller
+@Transactional
 public class RecipeController {
 
     @Autowired
-    RecipeService recipeService;
+    private RecipeService recipeService;
 
     @Autowired
     IngredientService ingredientService;
 
     @Autowired
-    ItemService itemService;
+    private ItemService itemService;
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Resource(name = "localValidatorFactoryBean")
-    Validator validator;
+    private Validator validator;
 
     @RequestMapping("/index")
-    @Transactional
     public String listRecipes(@RequestParam(value = "category", required = false) String category,
                               @RequestParam(value = "q", required = false) String q, Model model,
                               RedirectAttributes redirectAttributes) {
@@ -101,7 +101,6 @@ public class RecipeController {
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         recipe.setOwner(user);
 
-        // Validate the recipe
         validator.validate(recipe, result);
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.recipe", result);
@@ -131,7 +130,6 @@ public class RecipeController {
     }
 
     @RequestMapping("/recipe/{id}")
-    @Transactional
     public String detail(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
         Hibernate.initialize(recipe.getIngredients());
@@ -149,7 +147,6 @@ public class RecipeController {
 
 
     @RequestMapping("/recipe/{id}/favorite")
-    @Transactional
     public String setFavorite(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
@@ -196,7 +193,6 @@ public class RecipeController {
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         recipe.setOwner(user);
 
-        // Validate the recipe
         validator.validate(recipe, result);
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.recipe", result);
@@ -216,7 +212,6 @@ public class RecipeController {
         Recipe recipe = recipeService.findById(id);
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
 
-        // Let only the owner delete his recipe
         if (!user.equals(recipe.getOwner())) {
             redirectAttributes.addFlashAttribute("flash", new FlashMessage("You are not allowed to delete this recipe",
                     FlashMessage.Status.FAILED));

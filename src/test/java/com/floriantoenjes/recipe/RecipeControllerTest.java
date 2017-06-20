@@ -25,7 +25,6 @@ import static org.hamcrest.Matchers.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-@Transactional
 public class RecipeControllerTest {
     private MockMvc mockMvc;
 
@@ -179,6 +178,7 @@ public class RecipeControllerTest {
     }
 
     @Test
+    @Transactional
     public void recipe_id_favorite_ShouldSetRecipeAsFavorite() throws Exception {
         Recipe recipeBefore = recipeService.findById(1L);
         Hibernate.initialize(recipeBefore.getUsersFavorited());

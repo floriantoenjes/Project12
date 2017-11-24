@@ -1,7 +1,6 @@
 package com.floriantoenjes.recipe;
 
 import com.floriantoenjes.ingredient.Ingredient;
-import com.floriantoenjes.ingredient.IngredientService;
 import com.floriantoenjes.item.Item;
 import com.floriantoenjes.item.ItemService;
 import com.floriantoenjes.step.Step;
@@ -32,17 +31,19 @@ import java.util.stream.Collectors;
 @Transactional
 public class RecipeController {
 
-    @Autowired
     private RecipeService recipeService;
 
-    @Autowired
-    IngredientService ingredientService;
-
-    @Autowired
     private ItemService itemService;
 
-    @Autowired
     private UserService userService;
+
+    @Autowired
+    public RecipeController(RecipeService recipeService, ItemService itemService,
+                     UserService userService) {
+        this.recipeService = recipeService;
+        this.itemService = itemService;
+        this.userService = userService;
+    }
 
     @Resource(name = "localValidatorFactoryBean")
     private Validator validator;

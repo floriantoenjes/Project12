@@ -16,23 +16,16 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 @Component
 public class DatabaseLoader implements ApplicationRunner {
-    RecipeRepository recipes;
-    UserRepository users;
-    RoleRepository roles;
-    ItemRepository items;
+    private RecipeRepository recipes;
+    private UserRepository users;
+    private ItemRepository items;
 
     @Autowired
     public DatabaseLoader(RecipeRepository recipes, UserRepository users, RoleRepository roles, ItemRepository items) {
         this.recipes = recipes;
         this.users = users;
-        this.roles = roles;
         this.items = items;
     }
 

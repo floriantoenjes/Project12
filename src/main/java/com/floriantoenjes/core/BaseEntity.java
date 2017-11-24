@@ -1,8 +1,5 @@
 package com.floriantoenjes.core;
 
-import org.hibernate.annotations.GeneratorType;
-
-import javax.annotation.Generated;
 import javax.persistence.*;
 
 @MappedSuperclass

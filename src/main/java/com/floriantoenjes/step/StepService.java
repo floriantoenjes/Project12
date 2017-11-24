@@ -7,8 +7,13 @@ import java.util.List;
 
 @Service
 public class StepService {
+
+    private StepRepository stepRepository;
+
     @Autowired
-    StepRepository stepRepository;
+    public StepService(StepRepository stepRepository) {
+        this.stepRepository = stepRepository;
+    }
 
     public void save(Step step) {
         stepRepository.save(step);

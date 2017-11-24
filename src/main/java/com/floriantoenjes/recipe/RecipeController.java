@@ -95,8 +95,8 @@ public class RecipeController {
 
     @RequestMapping(value = "/index", method = RequestMethod.POST)
     public String addRecipe(Recipe recipe, BindingResult result, RedirectAttributes redirectAttributes) {
-        recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
-        recipe.getSteps().forEach( i -> i.setRecipe(recipe));
+        recipe.getIngredients().forEach( ingredient -> ingredient.setRecipe(recipe));
+        recipe.getSteps().forEach( step -> step.setRecipe(recipe));
 
         User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         recipe.setOwner(user);

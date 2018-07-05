@@ -50,30 +50,22 @@ public class RecipeController {
 
     @RequestMapping("/index")
     public String listRecipes(@RequestParam(value = "category", required = false) String category,
-                              @RequestParam(value = "q", required = false) String q, Model model,
+                              @RequestParam(value = "q", required = false) String query, Model model,
                               RedirectAttributes redirectAttributes) {
         List<Recipe> recipes = recipeService.findAll();
 
-        // If there is a query then search the recipes
-        if (q != null && !q.isEmpty()) {
-            recipes = recipes.stream().filter( recipe -> recipe.getName().toLowerCase().contains(q.toLowerCase()))
-                    .collect(Collectors.toList());
-            if (recipes.size() == 0) {
+        if (query != null && !query.isEmpty()) {
+            recipes = findRecipes(recipes, query);
+            if (recipes.size() <= 0) {
                 redirectAttributes.addFlashAttribute("flash", new FlashMessage("No recipes found",
                         FlashMessage.Status.FAILED));
                 return "redirect:/index";
             }
-        }
-
-        // Else if there is a category given then  filter for category
-        else if (category != null && !category.isEmpty()) {
-            recipes = recipes.stream().filter(recipe -> {
-                return recipe.getCategory().name().equalsIgnoreCase(category);
-            }).collect(Collectors.toList());
+        } else if (category != null && !category.isEmpty()) {
+            recipes = filterRecipesByCategory(recipes, category);
             model.addAttribute(category, true);
         }
 
-        // Else just show all recipes
         User user = getCurrentUser();
         Map<Recipe, Boolean> recipeMap = new TreeMap<>();
 
@@ -88,6 +80,17 @@ public class RecipeController {
 
         model.addAttribute("recipeMap", recipeMap);
         return "index";
+    }
+
+    private List<Recipe> findRecipes(List<Recipe> recipes, String query) {
+        return recipes.stream().filter( recipe -> recipe.getName().toLowerCase().contains(query.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
+    private List<Recipe> filterRecipesByCategory(List<Recipe> recipes, String category) {
+        return recipes.stream()
+                .filter(recipe -> recipe.getCategory().name().equalsIgnoreCase(category))
+                .collect(Collectors.toList());
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.POST)

@@ -221,6 +221,7 @@ public class RecipeController {
     }
 
 
+    // ToDo: Perhaps move to a util class
     private User getCurrentUser() {
         return userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
     }

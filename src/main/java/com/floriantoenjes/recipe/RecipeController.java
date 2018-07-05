@@ -74,11 +74,7 @@ public class RecipeController {
         }
 
         // Else just show all recipes
-        User user = userService.findByUsername(
-                SecurityContextHolder
-                        .getContext()
-                        .getAuthentication()
-                        .getName());
+        User user = getCurrentUser();
         Map<Recipe, Boolean> recipeMap = new TreeMap<>();
 
         recipes.forEach(recipe -> {
@@ -99,7 +95,7 @@ public class RecipeController {
         recipe.getIngredients().forEach( ingredient -> ingredient.setRecipe(recipe));
         recipe.getSteps().forEach( step -> step.setRecipe(recipe));
 
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
         recipe.setOwner(user);
 
         validator.validate(recipe, result);
@@ -137,7 +133,7 @@ public class RecipeController {
         Hibernate.initialize(recipe.getSteps());
         Hibernate.initialize(recipe.getUsersFavorited());
 
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
         if (recipe.getUsersFavorited().contains(user)) {
             model.addAttribute("favorite", true);
         }
@@ -150,7 +146,7 @@ public class RecipeController {
     @RequestMapping("/recipe/{id}/favorite")
     public String setFavorite(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
         Hibernate.initialize(user.getFavorites());
 
         List<Recipe> favorites = user.getFavorites();
@@ -171,7 +167,7 @@ public class RecipeController {
     public String editForm(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Recipe recipe = recipeService.findById(id);
 
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
         if (!user.equals(recipe.getOwner())) {
             redirectAttributes.addFlashAttribute("flash", new FlashMessage("You are not allowed to edit this recipe",
                     FlashMessage.Status.FAILED));
@@ -191,7 +187,7 @@ public class RecipeController {
         recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
         recipe.getSteps().forEach( i -> i.setRecipe(recipe));
 
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
         recipe.setOwner(user);
 
         validator.validate(recipe, result);
@@ -211,7 +207,7 @@ public class RecipeController {
     @RequestMapping("/recipe/{id}/delete")
     public String deleteRecipe(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         Recipe recipe = recipeService.findById(id);
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
 
         if (!user.equals(recipe.getOwner())) {
             redirectAttributes.addFlashAttribute("flash", new FlashMessage("You are not allowed to delete this recipe",
@@ -224,4 +220,8 @@ public class RecipeController {
         return "redirect:/index";
     }
 
+
+    private User getCurrentUser() {
+        return userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+    }
 }

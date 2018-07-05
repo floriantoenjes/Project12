@@ -58,7 +58,6 @@ public class RecipeController {
 
         if (query != null && !query.isEmpty()) {
             recipes = findRecipes(recipes, query);
-
             if (recipes.size() <= 0) {
                 redirectAttributes.addFlashAttribute("flash", new FlashMessage("No recipes found",
                         FlashMessage.Status.FAILED));
@@ -80,6 +79,7 @@ public class RecipeController {
         });
 
         model.addAttribute("recipeMap", recipeMap);
+
         return "index";
     }
 
@@ -113,6 +113,7 @@ public class RecipeController {
                 FlashMessage.Status.SUCCESS));
 
         recipeService.save(recipe);
+
         return "redirect:/index";
     }
 
@@ -127,6 +128,7 @@ public class RecipeController {
         model.addAttribute("items", itemService.findAll());
         model.addAttribute("categories", Category.values());
         model.addAttribute("action", "/index");
+
         return "edit";
     }
 
@@ -136,13 +138,14 @@ public class RecipeController {
         Hibernate.initialize(recipe.getIngredients());
         Hibernate.initialize(recipe.getSteps());
         Hibernate.initialize(recipe.getUsersFavorited());
-
         User user = getCurrentUser();
+
         if (recipe.getUsersFavorited().contains(user)) {
             model.addAttribute("favorite", true);
         }
 
         model.addAttribute("recipe", recipe);
+
         return "detail";
     }
 
@@ -152,8 +155,8 @@ public class RecipeController {
         Recipe recipe = recipeService.findById(id);
         User user = getCurrentUser();
         Hibernate.initialize(user.getFavorites());
-
         List<Recipe> favorites = user.getFavorites();
+
         if (favorites.contains(recipe)) {
             favorites.remove(recipe);
             recipe.removeUserFavorited(user);
@@ -164,6 +167,7 @@ public class RecipeController {
 
         userService.save(user);
         recipeService.save(recipe);
+
         return String.format("redirect:/recipe/%s", id);
     }
 
@@ -182,6 +186,7 @@ public class RecipeController {
         model.addAttribute("categories", Category.values());
         model.addAttribute("items", itemService.findAll());
         model.addAttribute("action", String.format("/recipe/%s/edit", id));
+
         return "edit";
     }
 
@@ -195,6 +200,7 @@ public class RecipeController {
         recipe.setOwner(user);
 
         validator.validate(recipe, result);
+
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.recipe", result);
             redirectAttributes.addFlashAttribute("recipe", recipe);
@@ -205,6 +211,7 @@ public class RecipeController {
                 FlashMessage.Status.SUCCESS));
 
         recipeService.save(recipe);
+
         return "redirect:/index";
     }
 
@@ -216,11 +223,12 @@ public class RecipeController {
         if (!user.equals(recipe.getOwner())) {
             redirectAttributes.addFlashAttribute("flash", new FlashMessage("You are not allowed to delete this recipe",
                     FlashMessage.Status.FAILED));
-            return "redirect:/index";
+        } else {
+            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Recipe has been deleted",
+                    FlashMessage.Status.SUCCESS));
+            recipeService.delete(recipe);
         }
-        redirectAttributes.addFlashAttribute("flash", new FlashMessage("Recipe has been deleted",
-                FlashMessage.Status.SUCCESS));
-        recipeService.delete(recipe);
+
         return "redirect:/index";
     }
 

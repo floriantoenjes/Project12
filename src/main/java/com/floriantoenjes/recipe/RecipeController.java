@@ -50,36 +50,24 @@ public class RecipeController {
 
     @RequestMapping("/index")
     public String listRecipes(@RequestParam(value = "category", required = false) String category,
-                              @RequestParam(value = "q", required = false) String q, Model model,
+                              @RequestParam(value = "q", required = false) String query, Model model,
                               RedirectAttributes redirectAttributes) {
+        User user = getCurrentUser();
+        Map<Recipe, Boolean> recipeMap = new TreeMap<>();
         List<Recipe> recipes = recipeService.findAll();
 
-        // If there is a query then search the recipes
-        if (q != null && !q.isEmpty()) {
-            recipes = recipes.stream().filter( recipe -> recipe.getName().toLowerCase().contains(q.toLowerCase()))
-                    .collect(Collectors.toList());
-            if (recipes.size() == 0) {
+        if (query != null && !query.isEmpty()) {
+            recipes = findRecipes(recipes, query);
+            if (recipes.size() <= 0) {
                 redirectAttributes.addFlashAttribute("flash", new FlashMessage("No recipes found",
                         FlashMessage.Status.FAILED));
                 return "redirect:/index";
             }
-        }
 
-        // Else if there is a category given then  filter for category
-        else if (category != null && !category.isEmpty()) {
-            recipes = recipes.stream().filter(recipe -> {
-                return recipe.getCategory().name().equalsIgnoreCase(category);
-            }).collect(Collectors.toList());
+        } else if (category != null && !category.isEmpty()) {
+            recipes = filterRecipesByCategory(recipes, category);
             model.addAttribute(category, true);
         }
-
-        // Else just show all recipes
-        User user = userService.findByUsername(
-                SecurityContextHolder
-                        .getContext()
-                        .getAuthentication()
-                        .getName());
-        Map<Recipe, Boolean> recipeMap = new TreeMap<>();
 
         recipes.forEach(recipe -> {
             Hibernate.initialize(recipe.getUsersFavorited());
@@ -91,7 +79,19 @@ public class RecipeController {
         });
 
         model.addAttribute("recipeMap", recipeMap);
+
         return "index";
+    }
+
+    private List<Recipe> findRecipes(List<Recipe> recipes, String query) {
+        return recipes.stream().filter( recipe -> recipe.getName().toLowerCase().contains(query.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
+    private List<Recipe> filterRecipesByCategory(List<Recipe> recipes, String category) {
+        return recipes.stream()
+                .filter(recipe -> recipe.getCategory().name().equalsIgnoreCase(category))
+                .collect(Collectors.toList());
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.POST)
@@ -99,7 +99,7 @@ public class RecipeController {
         recipe.getIngredients().forEach( ingredient -> ingredient.setRecipe(recipe));
         recipe.getSteps().forEach( step -> step.setRecipe(recipe));
 
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
         recipe.setOwner(user);
 
         validator.validate(recipe, result);
@@ -113,6 +113,7 @@ public class RecipeController {
                 FlashMessage.Status.SUCCESS));
 
         recipeService.save(recipe);
+
         return "redirect:/index";
     }
 
@@ -127,6 +128,7 @@ public class RecipeController {
         model.addAttribute("items", itemService.findAll());
         model.addAttribute("categories", Category.values());
         model.addAttribute("action", "/index");
+
         return "edit";
     }
 
@@ -136,13 +138,14 @@ public class RecipeController {
         Hibernate.initialize(recipe.getIngredients());
         Hibernate.initialize(recipe.getSteps());
         Hibernate.initialize(recipe.getUsersFavorited());
+        User user = getCurrentUser();
 
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         if (recipe.getUsersFavorited().contains(user)) {
             model.addAttribute("favorite", true);
         }
 
         model.addAttribute("recipe", recipe);
+
         return "detail";
     }
 
@@ -150,10 +153,10 @@ public class RecipeController {
     @RequestMapping("/recipe/{id}/favorite")
     public String setFavorite(@PathVariable Long id, Model model) {
         Recipe recipe = recipeService.findById(id);
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
         Hibernate.initialize(user.getFavorites());
-
         List<Recipe> favorites = user.getFavorites();
+
         if (favorites.contains(recipe)) {
             favorites.remove(recipe);
             recipe.removeUserFavorited(user);
@@ -164,6 +167,7 @@ public class RecipeController {
 
         userService.save(user);
         recipeService.save(recipe);
+
         return String.format("redirect:/recipe/%s", id);
     }
 
@@ -171,7 +175,7 @@ public class RecipeController {
     public String editForm(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Recipe recipe = recipeService.findById(id);
 
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
         if (!user.equals(recipe.getOwner())) {
             redirectAttributes.addFlashAttribute("flash", new FlashMessage("You are not allowed to edit this recipe",
                     FlashMessage.Status.FAILED));
@@ -182,6 +186,7 @@ public class RecipeController {
         model.addAttribute("categories", Category.values());
         model.addAttribute("items", itemService.findAll());
         model.addAttribute("action", String.format("/recipe/%s/edit", id));
+
         return "edit";
     }
 
@@ -191,10 +196,11 @@ public class RecipeController {
         recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
         recipe.getSteps().forEach( i -> i.setRecipe(recipe));
 
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
         recipe.setOwner(user);
 
         validator.validate(recipe, result);
+
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.recipe", result);
             redirectAttributes.addFlashAttribute("recipe", recipe);
@@ -205,23 +211,30 @@ public class RecipeController {
                 FlashMessage.Status.SUCCESS));
 
         recipeService.save(recipe);
+
         return "redirect:/index";
     }
 
     @RequestMapping("/recipe/{id}/delete")
     public String deleteRecipe(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         Recipe recipe = recipeService.findById(id);
-        User user = userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = getCurrentUser();
 
         if (!user.equals(recipe.getOwner())) {
             redirectAttributes.addFlashAttribute("flash", new FlashMessage("You are not allowed to delete this recipe",
                     FlashMessage.Status.FAILED));
-            return "redirect:/index";
+        } else {
+            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Recipe has been deleted",
+                    FlashMessage.Status.SUCCESS));
+            recipeService.delete(recipe);
         }
-        redirectAttributes.addFlashAttribute("flash", new FlashMessage("Recipe has been deleted",
-                FlashMessage.Status.SUCCESS));
-        recipeService.delete(recipe);
+
         return "redirect:/index";
     }
 
+
+    // ToDo: Perhaps move to a util class
+    private User getCurrentUser() {
+        return userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+    }
 }

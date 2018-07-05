@@ -52,22 +52,23 @@ public class RecipeController {
     public String listRecipes(@RequestParam(value = "category", required = false) String category,
                               @RequestParam(value = "q", required = false) String query, Model model,
                               RedirectAttributes redirectAttributes) {
+        User user = getCurrentUser();
+        Map<Recipe, Boolean> recipeMap = new TreeMap<>();
         List<Recipe> recipes = recipeService.findAll();
 
         if (query != null && !query.isEmpty()) {
             recipes = findRecipes(recipes, query);
+
             if (recipes.size() <= 0) {
                 redirectAttributes.addFlashAttribute("flash", new FlashMessage("No recipes found",
                         FlashMessage.Status.FAILED));
                 return "redirect:/index";
             }
+
         } else if (category != null && !category.isEmpty()) {
             recipes = filterRecipesByCategory(recipes, category);
             model.addAttribute(category, true);
         }
-
-        User user = getCurrentUser();
-        Map<Recipe, Boolean> recipeMap = new TreeMap<>();
 
         recipes.forEach(recipe -> {
             Hibernate.initialize(recipe.getUsersFavorited());

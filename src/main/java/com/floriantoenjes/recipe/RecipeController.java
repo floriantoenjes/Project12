@@ -52,7 +52,6 @@ public class RecipeController {
     public String listRecipes(@RequestParam(value = "category", required = false) String category,
                               @RequestParam(value = "q", required = false) String query, Model model,
                               RedirectAttributes redirectAttributes) {
-        User user = getCurrentUser();
         Map<Recipe, Boolean> recipeMap = new TreeMap<>();
         List<Recipe> recipes = recipeService.findAll();
 
@@ -69,14 +68,7 @@ public class RecipeController {
             model.addAttribute(category, true);
         }
 
-        recipes.forEach(recipe -> {
-            Hibernate.initialize(recipe.getUsersFavorited());
-            if (recipe.getUsersFavorited().contains(user)) {
-                recipeMap.put(recipe, true);
-            } else {
-                recipeMap.put(recipe, false);
-            }
-        });
+        initializeRecipes(recipeMap, recipes);
 
         model.addAttribute("recipeMap", recipeMap);
 
@@ -92,6 +84,19 @@ public class RecipeController {
         return recipes.stream()
                 .filter(recipe -> recipe.getCategory().name().equalsIgnoreCase(category))
                 .collect(Collectors.toList());
+    }
+
+    private void initializeRecipes(Map<Recipe, Boolean> recipeMap, List<Recipe> recipes) {
+        User user = getCurrentUser();
+
+        recipes.forEach(recipe -> {
+            Hibernate.initialize(recipe.getUsersFavorited());
+            if (recipe.getUsersFavorited().contains(user)) {
+                recipeMap.put(recipe, true);
+            } else {
+                recipeMap.put(recipe, false);
+            }
+        });
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.POST)
@@ -232,8 +237,6 @@ public class RecipeController {
         return "redirect:/index";
     }
 
-
-    // ToDo: Perhaps move to a util class
     private User getCurrentUser() {
         return userService.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
     }

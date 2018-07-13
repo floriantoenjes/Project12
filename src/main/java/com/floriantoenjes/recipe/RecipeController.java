@@ -68,7 +68,7 @@ public class RecipeController {
             model.addAttribute(category, true);
         }
 
-        initializeRecipes(recipeMap, recipes);
+        initializeRecipesFavorited(recipeMap, recipes);
 
         model.addAttribute("recipeMap", recipeMap);
 
@@ -86,7 +86,7 @@ public class RecipeController {
                 .collect(Collectors.toList());
     }
 
-    private void initializeRecipes(Map<Recipe, Boolean> recipeMap, List<Recipe> recipes) {
+    private void initializeRecipesFavorited(Map<Recipe, Boolean> recipeMap, List<Recipe> recipes) {
         User user = getCurrentUser();
 
         recipes.forEach(recipe -> {

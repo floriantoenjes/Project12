@@ -24,6 +24,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
@@ -52,30 +53,48 @@ public class RecipeController {
     public String listRecipes(@RequestParam(value = "category", required = false) String category,
                               @RequestParam(value = "q", required = false) String query, Model model,
                               RedirectAttributes redirectAttributes) {
+
         Map<Recipe, Boolean> recipeMap = new TreeMap<>();
         List<Recipe> recipes = recipeService.findAll();
 
-        if (query != null && !query.isEmpty()) {
-            recipes = findRecipes(recipes, query);
-            if (recipes.size() <= 0) {
-                redirectAttributes.addFlashAttribute("flash", new FlashMessage("No recipes found",
-                        FlashMessage.Status.FAILED));
+        if (hasQuery(query)) {
+            Optional<List<Recipe>> foundRecipes = searchForRecipes(recipes, query);
+
+            if (!foundRecipes.isPresent()) {
+                redirectAttributes.addFlashAttribute("flash",
+                        new FlashMessage("No recipes found", FlashMessage.Status.FAILED));
                 return "redirect:/index";
             }
 
-        } else if (category != null && !category.isEmpty()) {
-            recipes = filterRecipesByCategory(recipes, category);
+        } else if (hasCategory(category)) {
             model.addAttribute(category, true);
+            recipes = filterRecipesByCategory(recipes, category);
         }
 
-        initializeRecipesFavorited(recipeMap, recipes);
-
+        assignFavoritesToRecipes(recipeMap, recipes);
         model.addAttribute("recipeMap", recipeMap);
 
         return "index";
     }
 
-    private List<Recipe> findRecipes(List<Recipe> recipes, String query) {
+    private boolean hasQuery(String query) {
+        return query != null && !query.isEmpty();
+    }
+
+    private boolean hasCategory(String category) {
+        return category != null && !category.isEmpty();
+    }
+
+    private Optional<List<Recipe>> searchForRecipes(List<Recipe> recipes, String query) {
+            List<Recipe> results = filterRecipesByQuery(recipes, query);
+            if (results.size() > 0) {
+                return Optional.of(results);
+            } else {
+                return Optional.empty();
+            }
+    }
+
+    private List<Recipe> filterRecipesByQuery(List<Recipe> recipes, String query) {
         return recipes.stream().filter( recipe -> recipe.getName().toLowerCase().contains(query.toLowerCase()))
                 .collect(Collectors.toList());
     }
@@ -86,7 +105,7 @@ public class RecipeController {
                 .collect(Collectors.toList());
     }
 
-    private void initializeRecipesFavorited(Map<Recipe, Boolean> recipeMap, List<Recipe> recipes) {
+    private void assignFavoritesToRecipes(Map<Recipe, Boolean> recipeMap, List<Recipe> recipes) {
         User user = getCurrentUser();
 
         recipes.forEach(recipe -> {

@@ -58,13 +58,15 @@ public class RecipeController {
         List<Recipe> recipes = recipeService.findAll();
 
         if (hasQuery(query)) {
-            Optional<List<Recipe>> foundRecipes = searchForRecipes(recipes, query);
+            Optional<List<Recipe>> searchResults = searchForRecipes(recipes, query);
 
-            if (!foundRecipes.isPresent()) {
+            if (!searchResults.isPresent()) {
                 redirectAttributes.addFlashAttribute("flash",
                         new FlashMessage("No recipes found", FlashMessage.Status.FAILED));
                 return "redirect:/index";
             }
+
+            recipes = searchResults.get();
 
         } else if (hasCategory(category)) {
             model.addAttribute(category, true);

@@ -85,6 +85,7 @@ public class RecipeController {
 
     private Optional<List<Recipe>> searchForRecipes(List<Recipe> recipes, String query) {
             List<Recipe> results = filterRecipesByQuery(recipes, query);
+
             if (results.size() > 0) {
                 return Optional.of(results);
             } else {

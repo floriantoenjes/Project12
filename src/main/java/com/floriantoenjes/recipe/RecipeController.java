@@ -57,7 +57,7 @@ public class RecipeController {
         Map<Recipe, Boolean> recipeMap = new TreeMap<>();
         List<Recipe> recipes = recipeService.findAll();
 
-        if (hasQuery(query)) {
+        if (isPresent(query)) {
             Optional<List<Recipe>> searchResults = searchForRecipes(recipes, query);
 
             if (!searchResults.isPresent()) {
@@ -68,7 +68,7 @@ public class RecipeController {
 
             recipes = searchResults.get();
 
-        } else if (hasCategory(category)) {
+        } else if (isPresent(category)) {
             model.addAttribute(category, true);
             recipes = filterRecipesByCategory(recipes, category);
         }
@@ -79,12 +79,8 @@ public class RecipeController {
         return "index";
     }
 
-    private boolean hasQuery(String query) {
-        return query != null && !query.isEmpty();
-    }
-
-    private boolean hasCategory(String category) {
-        return category != null && !category.isEmpty();
+    private boolean isPresent(String str) {
+        return str != null && !str.isEmpty();
     }
 
     private Optional<List<Recipe>> searchForRecipes(List<Recipe> recipes, String query) {

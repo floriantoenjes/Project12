@@ -120,8 +120,7 @@ public class RecipeController {
 
     @RequestMapping(value = "/index", method = RequestMethod.POST)
     public String addRecipe(Recipe recipe, BindingResult result, RedirectAttributes redirectAttributes) {
-        recipe.getIngredients().forEach( ingredient -> ingredient.setRecipe(recipe));
-        recipe.getSteps().forEach( step -> step.setRecipe(recipe));
+        createRecipeAssociations(recipe);
 
         User user = getCurrentUser();
         recipe.setOwner(user);
@@ -217,8 +216,7 @@ public class RecipeController {
     @RequestMapping(value = "/recipe/{id}/edit", method = RequestMethod.POST)
     public String editRecipe(@PathVariable Long id, Recipe recipe, BindingResult result,
                              RedirectAttributes redirectAttributes) {
-        recipe.getIngredients().forEach( i -> i.setRecipe(recipe));
-        recipe.getSteps().forEach( i -> i.setRecipe(recipe));
+        createRecipeAssociations(recipe);
 
         User user = getCurrentUser();
         recipe.setOwner(user);
@@ -254,6 +252,11 @@ public class RecipeController {
         }
 
         return "redirect:/index";
+    }
+
+    private void createRecipeAssociations(Recipe recipe) {
+        recipe.getIngredients().forEach( ingredient -> ingredient.setRecipe(recipe));
+        recipe.getSteps().forEach( step -> step.setRecipe(recipe));
     }
 
     private User getCurrentUser() {
